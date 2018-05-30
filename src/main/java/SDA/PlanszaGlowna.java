@@ -5,107 +5,89 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PlanszaGlowna extends JFrame {
-    private JButton btn1;
-    private JButton btn2;
-    private JButton btn3;
-    private JButton btn4;
-    private JButton btn5;
-    private JButton btn6;
-    private JButton btn7;
-    private JButton btn8;
-    private JButton btn9;
-    public JLabel lbl1;
-    private JLabel lbl2;
-    private JLabel lbl3;
-    private JButton btnGraj;
-    //private JEditorPane btn11;
+import static SDA.RuchOsoba.ruchOsoba;
+
+
+public class PlanszaGlowna extends JFrame implements ActionListener {
+    public static JButton btn1;
+    public static JButton btn2;
+    public static JButton btn3;
+    public static JButton btn4;
+    public static JButton btn5;
+    public static JButton btn6;
+    public static JButton btn7;
+    public static JButton btn8;
+    public static JButton btn9;
+    public static JLabel lbl1;
+    public static JLabel lbl11;
+    public static JLabel lbl2;
+    public static JLabel lbl12;
+    public static JLabel lbl3;
+    public static JLabel lbl4;
+    public static JButton btnGraj;
+
+    static int ruchOsoba = 0; // 0 osoba numer 1, 1 osoba numer 2
+
+    static String znacznikBtn1 = "1", znacznikBtn2 = "2", znacznikBtn3 = "3";
+    static String znacznikBtn4 = "4", znacznikBtn5 = "5", znacznikBtn6 = "6";
+    static String znacznikBtn7 = "7", znacznikBtn8 = "8", znacznikBtn9 = "9";
 
 
     public void planszaGlowna() {
-        //PlanszaGlowna();
+
     }
 
-    PlanszaGlowna() {
-
+    public PlanszaGlowna() {
+        boolean bol = false;
         this.setLayout(null);
         this.setSize(500, 500);
         this.setTitle(" Kółko i Krzyżyk");
         this.setResizable(false);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        konstruktorButtonow();
+       // ButtonsDisabledOnFirst bdof = new ButtonsDisabledOnFirst();
+       // buttonsDisabledOnFirst(false);
+        buttonsDisabledOnFirst(bol);
+
+        KonstruktorButtonow kb = new KonstruktorButtonow();
+        kb.kontruktorButonow();
         konstruktorAddKontenerow();
-        konstruktorRozmiarButtonow();
-        konstruktorTekstów();
+        KonstruktorRozmiarButtonow krb = new KonstruktorRozmiarButtonow();
+        krb.rozmiaryLabelow();
+        KonstruktorTekstów kt = new KonstruktorTekstów();
+        kt.konstruktorTekstow();
+        addActiony();
         this.setVisible(true);
         setVisible(true);
 
 
-        btn1.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("Pierwszy");
-                btn1.setIcon(new ImageIcon(PlanszaGlowna.class.getResource("Resources/x.jpg")));
-
-                btn1.setEnabled(false);
-
-            }
-        });
-        btnGraj.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("btnGraj");
-                //btnGraj.setIcon(new ImageIcon(PlanszaGlowna.class.getResource("Resources/x.jpg")));
-                ustawImiona();
-                //btnGraj.setEnabled(false);
-
-            }
-        });
+    }
+    public static boolean buttonsDisabledOnFirst(boolean bol) {
+        btn1.setEnabled(bol);
+        PlanszaGlowna.btn2.setEnabled(bol);
+        PlanszaGlowna.btn3.setEnabled(bol);
+        PlanszaGlowna.btn4.setEnabled(bol);
+        PlanszaGlowna.btn5.setEnabled(bol);
+        PlanszaGlowna.btn6.setEnabled(bol);
+        PlanszaGlowna.btn7.setEnabled(bol);
+        PlanszaGlowna.btn8.setEnabled(bol);
+        PlanszaGlowna.btn9.setEnabled(bol);
+        return bol;
     }
 
-    public void ustawImiona() {
-        String imie1 = JOptionPane.showInputDialog("Player 1 podaj swoje  imie");
-        lbl1.setText(imie1);
-
-        String imie2 = JOptionPane.showInputDialog("Player 2 podaj swoje  imie");
-        lbl2.setText(imie2);
-
+    public void addActiony() {
+        btnGraj.addActionListener(this);
+        btn1.addActionListener(this);
+        btn2.addActionListener(this);
+        btn3.addActionListener(this);
+        btn4.addActionListener(this);
+        btn5.addActionListener(this);
+        btn6.addActionListener(this);
+        btn7.addActionListener(this);
+        btn8.addActionListener(this);
+        btn9.addActionListener(this);
     }
 
-    public void konstruktorTekstów() {
-        btn1.setText("");
-        btn2.setText("");
-        btn3.setText("");
-        btn4.setText("");
-        btn5.setText("");
-        btn6.setText("");
-        btn7.setText("");
-        btn8.setText("");
-        btn9.setText("");
-        btnGraj.setText("START");
-        lbl1.setText("fhfdh");
-        lbl2.setText("hfh");
-        lbl3.setText("fhfghgf");
-    }
-
-
-    public void konstruktorRozmiarButtonow() {
-        btn1.setBounds(20, 20, 100, 100);
-        btn2.setBounds(120, 20, 100, 100);
-        btn3.setBounds(220, 20, 100, 100);
-        btn4.setBounds(20, 120, 100, 100);
-        btn5.setBounds(120, 120, 100, 100);
-        btn6.setBounds(220, 120, 100, 100);
-        btn7.setBounds(20, 220, 100, 100);
-        btn8.setBounds(120, 220, 100, 100);
-        btn9.setBounds(220, 220, 100, 100);
-
-        btnGraj.setBounds(370, 20, 80, 60);
-
-        lbl1.setBounds(400, 170, 50, 50);
-        lbl2.setBounds(400, 190, 50, 50);
-        lbl3.setBounds(400, 200, 50, 50);
-
-    }
 
     public void konstruktorAddKontenerow() {
         Container kontener = this.getContentPane();
@@ -120,79 +102,174 @@ public class PlanszaGlowna extends JFrame {
         kontener.add(btn9);
         kontener.add(btnGraj);
         kontener.add(lbl1);
+        kontener.add(lbl11);
         kontener.add(lbl2);
+        kontener.add(lbl12);
         kontener.add(lbl3);
-    }
-
-    public void konstruktorButtonow() {
-        btn1 = new JButton();
-        btn2 = new JButton();
-        btn3 = new JButton();
-        btn4 = new JButton();
-        btn5 = new JButton();
-        btn6 = new JButton();
-        btn7 = new JButton();
-        btn8 = new JButton();
-        btn9 = new JButton();
-        btnGraj = new JButton();
-
-        lbl1 = new JLabel();
-        lbl2 = new JLabel();
-        lbl3 = new JLabel();
+        kontener.add(lbl4);
     }
 
 
-    //setVisible(true);
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Object source = e.getSource();
+        if (source == btn1) {
+            if (ruchOsoba == 0) {
+                btn1.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
+                        "Resources/x.jpg"
 
-//        add(button1);
-//        add(button2);
-//        add(button3);
-//        add(button4);
-//        add(button5);
-//        add(button6);
-//        add(button7);
-//        add(button8);
-//        add(button9);
-//        add(btnGraj);
-//
-//        add(lbl1);
-//        add(lbl2);
-//        add(lbl3);
-//
-//        button1.setBounds(20, 20, 100, 100);
-//        button2.setBounds(120, 20, 100, 100);
-//        button3.setBounds(220, 20, 100, 100);
-//        button4.setBounds(20, 120, 100, 100);
-//        button5.setBounds(120, 120, 100, 100);
-//        button6.setBounds(220, 120, 100, 100);
-//        button7.setBounds(20, 220, 100, 100);
-//        button8.setBounds(120, 220, 100, 100);
-//        button9.setBounds(220, 220, 100, 100);
-//
-//        btnGraj.setBounds(370, 20, 80, 60);
-//        lbl1.setBounds(400, 170, 50, 50);
-//        lbl2.setBounds(400, 190, 50, 50);
-//        lbl3.setBounds(400, 200, 50, 50);
-//        String imie;
-//        //UstawTextButonow(imie);
-//
-//
-//        lbl1.setText("pierszy");
-//        lbl2.setText("drugi");
-//        lbl3.setText("trzeci");
-//
-//
-//        button1.setText("");
-//        button2.setText("");
-//        button3.setText("");
-//        button4.setText("");
-//        button5.setText("");
-//        button6.setText("");
-//        button7.setText("");
-//        button8.setText("");
-//        button9.setText("");
-//        btnGraj.setText("START");
-//        setVisible(true);
-//
+                )));
+                znacznikBtn1 = "x";
+                ruchOsoba();
+            } else {
+                btn1.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
+                        "Resources/o.jpg"
+                )));
+                znacznikBtn1 = "o";
+                ruchOsoba();
+            }
+            ;
+            btn1.setEnabled(false);
+            System.out.println("Nacinall jeden");
+        } else if (source == btn2) {
+            if (ruchOsoba == 0) {
+                btn2.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
+                        "Resources/x.jpg"
+                )));
+                znacznikBtn2 = "x";
+                ruchOsoba();
+            } else {
+                btn2.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
+                        "Resources/o.jpg"
+                )));
+                znacznikBtn2 = "o";
+                ruchOsoba();
+            }
+            ;
+            //btn2.setIcon(new ImageIcon(PlanszaGlowna.class.getResource("Resources/x.jpg")));
+            btn2.setEnabled(false);
+            System.out.println("/Nacoisnl 2");
+        } else if (source == btn3) {
+
+            if (ruchOsoba == 0) {
+                btn3.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
+                        "Resources/x.jpg"
+                )));
+                znacznikBtn3 = "x";
+                ruchOsoba();
+            } else {
+                btn3.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
+                        "Resources/o.jpg"
+                )));
+                znacznikBtn3 = "o";
+                ruchOsoba();
+            }
+            btn3.setEnabled(false);
+            System.out.println("/Nacoisnl 3");
+        } else if (source == btn4) {
+            if (ruchOsoba == 0) {
+                btn4.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
+                        "Resources/x.jpg"
+                )));
+                znacznikBtn4 = "x";
+                ruchOsoba();
+            } else {
+                btn4.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
+                        "Resources/o.jpg"
+                )));
+                znacznikBtn4 = "o";
+                ruchOsoba();
+            }
+            btn4.setEnabled(false);
+            System.out.println("/Nacoisnl 4");
+        } else if (source == btn5) {
+            if (ruchOsoba == 0) {
+                btn5.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
+                        "Resources/x.jpg"
+                )));
+                znacznikBtn5 = "x";
+                ruchOsoba();
+            } else {
+                btn5.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
+                        "Resources/o.jpg"
+                )));
+                znacznikBtn5 = "o";
+                ruchOsoba();
+            }
+            btn5.setEnabled(false);
+            System.out.println("/Nacoisnl 5");
+        } else if (source == btn6) {
+            if (ruchOsoba == 0) {
+                btn6.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
+                        "Resources/x.jpg"
+                )));
+                znacznikBtn6 = "x";
+                ruchOsoba();
+            } else {
+                btn6.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
+                        "Resources/o.jpg"
+                )));
+                znacznikBtn6 = "o";
+                ruchOsoba();
+            }
+            btn6.setEnabled(false);
+            System.out.println("/Nacoisnl 6");
+        } else if (source == btn7) {
+            if (ruchOsoba == 0) {
+                btn7.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
+                        "Resources/x.jpg"
+                )));
+                znacznikBtn7 = "x";
+                ruchOsoba();
+            } else {
+                btn7.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
+                        "Resources/o.jpg"
+                )));
+                znacznikBtn7 = "o";
+                ruchOsoba();
+            }
+            btn7.setEnabled(false);
+            System.out.println("/Nacoisnl 7");
+        } else if (source == btn8) {
+            if (ruchOsoba == 0) {
+                btn8.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
+                        "Resources/x.jpg"
+                )));
+                znacznikBtn8 = "x";
+                ruchOsoba();
+            } else {
+                btn8.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
+                        "Resources/o.jpg"
+                )));
+                znacznikBtn8 = "o";
+                ruchOsoba();
+            }
+            btn8.setEnabled(false);
+            System.out.println("/Nacoisnl 8");
+        } else if (source == btn9) {
+            if (ruchOsoba == 0) {
+                btn9.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
+                        "Resources/x.jpg"
+                )));
+                znacznikBtn9 = "x";
+                ruchOsoba();
+            } else {
+                btn9.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
+                        "Resources/o.jpg"
+                )));
+                znacznikBtn9 = "o";
+                ruchOsoba();
+            }
+            btn9.setEnabled(false);
+            System.out.println("/Nacoisnl 9");
+        } else if (source == btnGraj) {
+
+            UstawImiona.ustawImiona();
+            btnGraj.setEnabled(false);
+            System.out.println("/Nacoisnl btnGraj");
+            lbl3.setText("Rozpoczyna Gracz o imieniu : " + lbl1.getText());
+        }
+
+    }
 
 }
