@@ -32,13 +32,29 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
     static String znacznikBtn4 = "4", znacznikBtn5 = "5", znacznikBtn6 = "6";
     static String znacznikBtn7 = "7", znacznikBtn8 = "8", znacznikBtn9 = "9";
 
+    boolean bol = false;
+    ButtonsDisabledOnFirst btdof = new ButtonsDisabledOnFirst();
+    KonstruktorButtonow kb = new KonstruktorButtonow();
+    KonstruktorRozmiarButtonow krb = new KonstruktorRozmiarButtonow();
+    KonstruktorTekstów kt = new KonstruktorTekstów();
+
+
+
 
     public void planszaGlowna() {
 
+        kb.kontruktorButonow();
+        konstruktorAddKontenerow();
+        krb.rozmiaryLabelow();
+        kt.konstruktorTekstow();
+        addActiony();
+        this.setVisible(true);
+        btdof.buttonsDisabledOnFirst(false);
+        setVisible(true);
     }
 
     public PlanszaGlowna() {
-        boolean bol = false;
+        this.bol = bol;
         this.setLayout(null);
         this.setSize(500, 500);
         this.setTitle(" Kółko i Krzyżyk");
@@ -47,33 +63,36 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
 
        // ButtonsDisabledOnFirst bdof = new ButtonsDisabledOnFirst();
        // buttonsDisabledOnFirst(false);
-        buttonsDisabledOnFirst(bol);
 
-        KonstruktorButtonow kb = new KonstruktorButtonow();
-        kb.kontruktorButonow();
-        konstruktorAddKontenerow();
-        KonstruktorRozmiarButtonow krb = new KonstruktorRozmiarButtonow();
-        krb.rozmiaryLabelow();
-        KonstruktorTekstów kt = new KonstruktorTekstów();
-        kt.konstruktorTekstow();
-        addActiony();
-        this.setVisible(true);
-        setVisible(true);
+        // *************************
+
+//        buttonsDisabledOnFirst(bol);
+//        KonstruktorButtonow kb = new KonstruktorButtonow();
+//        kb.kontruktorButonow();
+//        konstruktorAddKontenerow();
+//        KonstruktorRozmiarButtonow krb = new KonstruktorRozmiarButtonow();
+//        krb.rozmiaryLabelow();
+//        KonstruktorTekstów kt = new KonstruktorTekstów();
+//        kt.konstruktorTekstow();
+//        addActiony();
+//        this.setVisible(true);
+//        setVisible(true);
 
 
     }
-    public static boolean buttonsDisabledOnFirst(boolean bol) {
-        btn1.setEnabled(bol);
-        PlanszaGlowna.btn2.setEnabled(bol);
-        PlanszaGlowna.btn3.setEnabled(bol);
-        PlanszaGlowna.btn4.setEnabled(bol);
-        PlanszaGlowna.btn5.setEnabled(bol);
-        PlanszaGlowna.btn6.setEnabled(bol);
-        PlanszaGlowna.btn7.setEnabled(bol);
-        PlanszaGlowna.btn8.setEnabled(bol);
-        PlanszaGlowna.btn9.setEnabled(bol);
-        return bol;
-    }
+//    public static boolean buttonsDisabledOnFirst(boolean bol) {
+//
+//        btn1.setEnabled(bol);
+//        PlanszaGlowna.btn2.setEnabled(bol);
+//        PlanszaGlowna.btn3.setEnabled(bol);
+//        PlanszaGlowna.btn4.setEnabled(bol);
+//        PlanszaGlowna.btn5.setEnabled(bol);
+//        PlanszaGlowna.btn6.setEnabled(bol);
+//        PlanszaGlowna.btn7.setEnabled(bol);
+//        PlanszaGlowna.btn8.setEnabled(bol);
+//        PlanszaGlowna.btn9.setEnabled(bol);
+//        return bol;
+//    }
 
     public void addActiony() {
         btnGraj.addActionListener(this);
@@ -268,6 +287,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
             btnGraj.setEnabled(false);
             System.out.println("/Nacoisnl btnGraj");
             lbl3.setText("Rozpoczyna Gracz o imieniu : " + lbl1.getText());
+            btdof.buttonsDisabledOnFirst(true);
         }
 
     }
