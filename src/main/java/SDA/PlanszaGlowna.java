@@ -39,6 +39,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
     KonstruktorTekstów kt = new KonstruktorTekstów();
     SetLabels sL = new SetLabels();
 
+
     public void planszaGlowna() {
 
         kb.kontruktorButonow();
@@ -253,7 +254,10 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
             btn9.setEnabled(false);
             System.out.println("/Nacoisnl 9");
         }else if (source==btnReset)
-        {
+
+        { //ResetSettings rSett = new ResetSettings();
+            ResetSettings.resetSettings();
+            //rSett.resetSettings();
             // Butn Reset resetuje gre i przywraca wszytsko do poziomu zero
 
             System.out.println("Nacisnal RESET");
