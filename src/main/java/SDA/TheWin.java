@@ -16,6 +16,6 @@ public class TheWin extends PlanszaGlowna
         btn7.setEnabled(false);
         btn8.setEnabled(false);
         btn9.setEnabled(false);
-        lbl3.setText("WYGRANA  Gracza o imieniu : " + lbl4.getText());
+        lbl3.setText("WYGRANA  GRACZA O IMIENIU: " + lbl4.getText());
     }
 }
