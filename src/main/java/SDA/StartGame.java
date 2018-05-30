@@ -17,6 +17,9 @@ public class StartGame extends PlanszaGlowna
                 lbl3.setText("Ruch Gracza o imieniu : " + lbl2.getText());
                 //ruchOsoba = 0;
             }
+
         }
+        btnReset.setEnabled(true);
     }
+
 }

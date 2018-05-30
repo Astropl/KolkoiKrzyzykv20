@@ -25,6 +25,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
     public static JLabel lbl3;
     public static JLabel lbl4;
     public static JButton btnGraj;
+    public static JButton btnReset;
 
     static int ruchOsoba = 0; // 0 osoba numer 1, 1 osoba numer 2
     static String znacznikBtn1 = "1", znacznikBtn2 = "2", znacznikBtn3 = "3";
@@ -47,9 +48,10 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
         addActiony();
         this.setVisible(true);
         btdof.buttonsDisabledOnFirst(false);
-
         setVisible(true);
         sL.setLabels(false);
+        btnReset.setEnabled(false);
+        lbl4.setVisible(false);
     }
 
     public PlanszaGlowna() {
@@ -74,6 +76,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
         btn7.addActionListener(this);
         btn8.addActionListener(this);
         btn9.addActionListener(this);
+        btnReset.addActionListener(this);
     }
 
 
@@ -95,6 +98,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
         kontener.add(lbl12);
         kontener.add(lbl3);
         kontener.add(lbl4);
+        kontener.add(btnReset);
     }
 
 
@@ -133,8 +137,6 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
                 znacznikBtn2 = "o";
                 ruchOsoba();
             }
-            ;
-            //btn2.setIcon(new ImageIcon(PlanszaGlowna.class.getResource("Resources/x.jpg")));
             btn2.setEnabled(false);
             System.out.println("/Nacoisnl 2");
         } else if (source == btn3) {
@@ -250,6 +252,11 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
             }
             btn9.setEnabled(false);
             System.out.println("/Nacoisnl 9");
+        }else if (source==btnReset)
+        {
+            // Butn Reset resetuje gre i przywraca wszytsko do poziomu zero
+
+            System.out.println("Nacisnal RESET");
         } else if (source == btnGraj) {
 
             UstawImiona.ustawImiona();

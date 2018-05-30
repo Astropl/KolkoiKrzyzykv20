@@ -13,14 +13,20 @@ public class KonstruktorRozmiarButtonow {
 
         PlanszaGlowna.btnGraj.setBounds(370, 20, 80, 60);
 
-        PlanszaGlowna.lbl1.setBounds(350, 120, 80, 40);
-        PlanszaGlowna.lbl11.setBounds(350, 100, 80, 40);
-        PlanszaGlowna.lbl2.setBounds(350, 190, 80, 40);
-        PlanszaGlowna.lbl12.setBounds(350, 170, 80, 40);
+
+        PlanszaGlowna.lbl11.setBounds(350, 120, 80, 40);
+        PlanszaGlowna.lbl1.setBounds(350, 140, 80, 40);
+
+
+        PlanszaGlowna.lbl12.setBounds(350, 190, 80, 40);
+        PlanszaGlowna.lbl2.setBounds(350, 210, 80, 40);
+        PlanszaGlowna.lbl4.setBounds(350, 290, 50, 40);/////////
         PlanszaGlowna.lbl3.setBounds(10, 380, 450, 50);
-        PlanszaGlowna.lbl4.setBounds(350, 250, 50, 40);
+
 
         PlanszaGlowna.btn1.setBounds(20, 20, 100, 100);
         PlanszaGlowna.btn2.setBounds(120, 20, 100, 100);
+
+        PlanszaGlowna.btnReset.setBounds(370, 80, 80,40);
     }
 }

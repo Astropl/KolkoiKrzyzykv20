@@ -6,7 +6,7 @@ public class SetLabels  {
         PlanszaGlowna.lbl1.setVisible(bol);
         PlanszaGlowna.lbl2.setVisible(bol);
         PlanszaGlowna.lbl3.setVisible(bol);
-        PlanszaGlowna.lbl4.setVisible(bol);
+        PlanszaGlowna.lbl4.setVisible(false);
         PlanszaGlowna.lbl11.setVisible(bol);
         PlanszaGlowna.lbl12.setVisible(bol);
         return bol;

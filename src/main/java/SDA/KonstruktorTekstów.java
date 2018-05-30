@@ -2,9 +2,7 @@ package SDA;
 
 import java.awt.*;
 
-import static SDA.PlanszaGlowna.btn3;
-
-public class KonstruktorTekstów  {
+public class KonstruktorTekstów {
 
     public static void konstruktorTekstow() {
         PlanszaGlowna.btn1.setText("");
@@ -26,7 +24,7 @@ public class KonstruktorTekstów  {
         PlanszaGlowna.lbl1.setFont(new Font("Arial", Font.BOLD, 15));
         PlanszaGlowna.lbl3.setFont(new Font("Tahoma", Font.BOLD, 20));
         PlanszaGlowna.lbl4.setText("Current Name");
-
+        PlanszaGlowna.btnReset.setText("RESET");
 
     }
 
