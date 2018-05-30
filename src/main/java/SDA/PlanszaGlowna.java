@@ -27,7 +27,6 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
     public static JButton btnGraj;
 
     static int ruchOsoba = 0; // 0 osoba numer 1, 1 osoba numer 2
-
     static String znacznikBtn1 = "1", znacznikBtn2 = "2", znacznikBtn3 = "3";
     static String znacznikBtn4 = "4", znacznikBtn5 = "5", znacznikBtn6 = "6";
     static String znacznikBtn7 = "7", znacznikBtn8 = "8", znacznikBtn9 = "9";
@@ -37,9 +36,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
     KonstruktorButtonow kb = new KonstruktorButtonow();
     KonstruktorRozmiarButtonow krb = new KonstruktorRozmiarButtonow();
     KonstruktorTekstów kt = new KonstruktorTekstów();
-
-
-
+    SetLabels sL = new SetLabels();
 
     public void planszaGlowna() {
 
@@ -50,7 +47,9 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
         addActiony();
         this.setVisible(true);
         btdof.buttonsDisabledOnFirst(false);
+
         setVisible(true);
+        sL.setLabels(false);
     }
 
     public PlanszaGlowna() {
@@ -60,39 +59,9 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
         this.setTitle(" Kółko i Krzyżyk");
         this.setResizable(false);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
-       // ButtonsDisabledOnFirst bdof = new ButtonsDisabledOnFirst();
-       // buttonsDisabledOnFirst(false);
-
-        // *************************
-
-//        buttonsDisabledOnFirst(bol);
-//        KonstruktorButtonow kb = new KonstruktorButtonow();
-//        kb.kontruktorButonow();
-//        konstruktorAddKontenerow();
-//        KonstruktorRozmiarButtonow krb = new KonstruktorRozmiarButtonow();
-//        krb.rozmiaryLabelow();
-//        KonstruktorTekstów kt = new KonstruktorTekstów();
-//        kt.konstruktorTekstow();
-//        addActiony();
-//        this.setVisible(true);
-//        setVisible(true);
-
-
+        setVisible(true);
     }
-//    public static boolean buttonsDisabledOnFirst(boolean bol) {
-//
-//        btn1.setEnabled(bol);
-//        PlanszaGlowna.btn2.setEnabled(bol);
-//        PlanszaGlowna.btn3.setEnabled(bol);
-//        PlanszaGlowna.btn4.setEnabled(bol);
-//        PlanszaGlowna.btn5.setEnabled(bol);
-//        PlanszaGlowna.btn6.setEnabled(bol);
-//        PlanszaGlowna.btn7.setEnabled(bol);
-//        PlanszaGlowna.btn8.setEnabled(bol);
-//        PlanszaGlowna.btn9.setEnabled(bol);
-//        return bol;
-//    }
+
 
     public void addActiony() {
         btnGraj.addActionListener(this);
@@ -288,6 +257,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
             System.out.println("/Nacoisnl btnGraj");
             lbl3.setText("Rozpoczyna Gracz o imieniu : " + lbl1.getText());
             btdof.buttonsDisabledOnFirst(true);
+            sL.setLabels(true);
         }
 
     }
