@@ -32,7 +32,19 @@ public class ResetSettings extends PlanszaGlowna {
                 "")));
         btn9.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
                 "")));
-
+        znacznikBtn1 = "1";
+        znacznikBtn2 = "2";
+        znacznikBtn3 = "3";
+        znacznikBtn4 = "4";
+        znacznikBtn5 = "5";
+        znacznikBtn6 = "6";
+        znacznikBtn7 = "7";
+        znacznikBtn8 = "8";
+        znacznikBtn9 = "9";
+        ruchOsoba = 0;
+        chBox.setSelected(false);
+        chBox.setVisible(true);
+        lbl5.setVisible(true);
 
     }
 

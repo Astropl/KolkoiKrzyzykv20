@@ -2,6 +2,7 @@ package SDA;
 
 import java.awt.*;
 
+
 public class KonstruktorTekstów {
 
     public static void konstruktorTekstow() {
@@ -25,7 +26,12 @@ public class KonstruktorTekstów {
         PlanszaGlowna.lbl3.setFont(new Font("Tahoma", Font.BOLD, 20));
         PlanszaGlowna.lbl4.setText("Current Name");
         PlanszaGlowna.btnReset.setText("RESET");
+        PlanszaGlowna.chBox.setText("Osoba - Osoba");
+        PlanszaGlowna.lbl5.setText(convertToMultiline("Zaznacz żeby grac z komputerem. Odznaczone to gra dwóch osób."));
+    }
 
+    public static String convertToMultiline(String orig) {
+        return "<html>" + orig.replaceAll("\n", "<br>");
     }
 
 }

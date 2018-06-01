@@ -1,5 +1,7 @@
 package SDA;
 
+import java.awt.*;
+
 public class KonstruktorRozmiarButtonow {
     public static void rozmiaryLabelow() {
 
@@ -28,5 +30,8 @@ public class KonstruktorRozmiarButtonow {
         PlanszaGlowna.btn2.setBounds(120, 20, 100, 100);
 
         PlanszaGlowna.btnReset.setBounds(370, 80, 80,40);
+        PlanszaGlowna.chBox.setBounds(350,140,180,40);
+        PlanszaGlowna.lbl5.setBounds(350, 140,120,180);
+
     }
 }

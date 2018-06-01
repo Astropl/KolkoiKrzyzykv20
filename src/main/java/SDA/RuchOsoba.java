@@ -14,7 +14,13 @@ public class RuchOsoba extends PlanszaGlowna
             ruchOsoba = 0;
             lbl4.setText(lbl2.getText());
             lbl3.setText("Ruch Gracza o imieniu : " + lbl1.getText());
+        } else if (ruchOsoba ==2)
+        {
+            ruchOsoba =0;
+            lbl4.setText(lbl2.getText());
+            lbl3.setText("Ruch Gracza o imieniu : " + lbl1.getText());
         }
+
         Checkresult.checkResult();
     }
 }

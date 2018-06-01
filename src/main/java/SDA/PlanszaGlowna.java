@@ -24,10 +24,12 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
     public static JLabel lbl12;
     public static JLabel lbl3;
     public static JLabel lbl4;
+    public static JLabel lbl5;
     public static JButton btnGraj;
     public static JButton btnReset;
+    public static JCheckBox chBox;
 
-    static int ruchOsoba = 0; // 0 osoba numer 1, 1 osoba numer 2
+    static int ruchOsoba = 0; // 0 osoba numer 1, 1 osoba numer 2, 2  komputer BAJTEK
     static String znacznikBtn1 = "1", znacznikBtn2 = "2", znacznikBtn3 = "3";
     static String znacznikBtn4 = "4", znacznikBtn5 = "5", znacznikBtn6 = "6";
     static String znacznikBtn7 = "7", znacznikBtn8 = "8", znacznikBtn9 = "9";
@@ -78,6 +80,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
         btn8.addActionListener(this);
         btn9.addActionListener(this);
         btnReset.addActionListener(this);
+        chBox.addActionListener(this);
     }
 
 
@@ -100,6 +103,8 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
         kontener.add(lbl3);
         kontener.add(lbl4);
         kontener.add(btnReset);
+        kontener.add(chBox);
+        kontener.add(lbl5);
     }
 
 
@@ -114,16 +119,19 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
                 )));
                 znacznikBtn1 = "x";
                 ruchOsoba();
-            } else {
-                btn1.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
+            } else if (ruchOsoba ==1)
+                {btn1.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
                         "Resources/o.jpg"
                 )));
                 znacznikBtn1 = "o";
                 ruchOsoba();
             }
-            ;
+            else if( ruchOsoba ==2)
+            {
+                System.out.println("Ruch kompa");
+            }
             btn1.setEnabled(false);
-            System.out.println("Nacinall jeden");
+            System.out.println("Nacinall 1");
         } else if (source == btn2) {
             if (ruchOsoba == 0) {
                 btn2.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
@@ -139,7 +147,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
                 ruchOsoba();
             }
             btn2.setEnabled(false);
-            System.out.println("/Nacoisnl 2");
+            System.out.println("Nacoisnl 2");
         } else if (source == btn3) {
 
             if (ruchOsoba == 0) {
@@ -156,7 +164,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
                 ruchOsoba();
             }
             btn3.setEnabled(false);
-            System.out.println("/Nacoisnl 3");
+            System.out.println("Nacoisnl 3");
         } else if (source == btn4) {
             if (ruchOsoba == 0) {
                 btn4.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
@@ -172,7 +180,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
                 ruchOsoba();
             }
             btn4.setEnabled(false);
-            System.out.println("/Nacoisnl 4");
+            System.out.println("Nacoisnl 4");
         } else if (source == btn5) {
             if (ruchOsoba == 0) {
                 btn5.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
@@ -188,7 +196,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
                 ruchOsoba();
             }
             btn5.setEnabled(false);
-            System.out.println("/Nacoisnl 5");
+            System.out.println("Nacoisnl 5");
         } else if (source == btn6) {
             if (ruchOsoba == 0) {
                 btn6.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
@@ -204,7 +212,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
                 ruchOsoba();
             }
             btn6.setEnabled(false);
-            System.out.println("/Nacoisnl 6");
+            System.out.println("Nacoisnl 6");
         } else if (source == btn7) {
             if (ruchOsoba == 0) {
                 btn7.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
@@ -220,7 +228,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
                 ruchOsoba();
             }
             btn7.setEnabled(false);
-            System.out.println("/Nacoisnl 7");
+            System.out.println("Nacoisnl 7");
         } else if (source == btn8) {
             if (ruchOsoba == 0) {
                 btn8.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
@@ -253,22 +261,31 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
             }
             btn9.setEnabled(false);
             System.out.println("/Nacoisnl 9");
-        }else if (source==btnReset)
+        } else if (source == btnReset)
 
-        { //ResetSettings rSett = new ResetSettings();
+        {
             ResetSettings.resetSettings();
-            //rSett.resetSettings();
-            // Butn Reset resetuje gre i przywraca wszytsko do poziomu zero
+
 
             System.out.println("Nacisnal RESET");
         } else if (source == btnGraj) {
 
             UstawImiona.ustawImiona();
             btnGraj.setEnabled(false);
-            System.out.println("/Nacoisnl btnGraj");
+            System.out.println("Nacoisnl btnGraj");
             lbl3.setText("Rozpoczyna Gracz o imieniu : " + lbl1.getText());
             btdof.buttonsDisabledOnFirst(true);
             sL.setLabels(true);
+            chBox.setVisible(false);
+            lbl5.setVisible(false);
+        } else if (source == chBox) {
+            System.out.println("Zmiana ststusu CheckBoxa");
+
+            if (chBox.isSelected()) {
+                chBox.setText("Osoba - Komputer");
+            } else if (chBox.isSelected() == false) {
+                chBox.setText("Osoba - Osoba");
+            }
         }
 
     }
