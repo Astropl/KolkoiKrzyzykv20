@@ -15,7 +15,7 @@ public class UstawImiona {
             //String imie2 = JOptionPane.showDialog("Player 2 podaj swoje  imie");
             imie2 = "BAJTEK";
             System.out.println("Ustawiam imie komputera na Bajtek");
-            PlanszaGlowna.ruchOsoba =3;
+            //PlanszaGlowna.ruchOsoba =0;
         }else {
             imie2 = JOptionPane.showInputDialog("Player 2 podaj swoje  imie");
         }

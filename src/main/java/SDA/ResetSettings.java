@@ -45,6 +45,7 @@ public class ResetSettings extends PlanszaGlowna {
         chBox.setSelected(false);
         chBox.setVisible(true);
         lbl5.setVisible(true);
+        countRuch=0;
 
     }
 
