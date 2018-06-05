@@ -109,7 +109,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
     }
 
 
-    @Override
+
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
         if (source == btn1) {
