@@ -19,11 +19,12 @@ public class KonstruktorTekstów {
 
         PlanszaGlowna.lbl1.setText("imie 1");
         PlanszaGlowna.lbl11.setText("GRACZ nr 1");
-        PlanszaGlowna.lbl1.setFont(new Font("Arial", Font.BOLD, 15));
+
         PlanszaGlowna.lbl2.setText("imie 2");
         PlanszaGlowna.lbl12.setText("GRACZ nr 2");
+        //PlanszaGlowna.lbl1.setFont(new Font("Arial", Font.BOLD, 15));
         PlanszaGlowna.lbl1.setFont(new Font("Arial", Font.BOLD, 15));
-        PlanszaGlowna.lbl3.setFont(new Font("Tahoma", Font.BOLD, 20));
+        PlanszaGlowna.lbl3.setFont(new Font("Arial", Font.BOLD, 15));
         PlanszaGlowna.lbl4.setText("Current Name");
         PlanszaGlowna.btnReset.setText("RESET");
         PlanszaGlowna.chBox.setText("Osoba - Osoba");

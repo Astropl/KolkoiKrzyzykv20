@@ -8,18 +8,18 @@ public class StartGame extends PlanszaGlowna
     {
         JOptionPane.showMessageDialog(null, "No to zaczynamy");
 
-        for (int kolejnyRuch = 1; kolejnyRuch <= 9; kolejnyRuch++) {
+        //for (int kolejnyRuch = 1; kolejnyRuch <= 9; kolejnyRuch++) {
             if (ruchOsoba == 0) {
                 lbl3.setText("Ruch Gracza o imieniu : " + lbl1.getText());
-                //ruchOsoba = 1;
+                //ruchOsoba = 1;// Todo: zmieniłem odkomentowałem ruchOsoba=1
 
             } else if (ruchOsoba == 1) {
                 lbl3.setText("Ruch Gracza o imieniu : " + lbl2.getText());
-                //ruchOsoba = 0;
+                //ruchOsoba = 0;// Todo: zmieniłem odkomentowałem ruchOsoba=2
             }
-
-        }
         btnReset.setEnabled(true);
+        }
+
     }
 
-}
+

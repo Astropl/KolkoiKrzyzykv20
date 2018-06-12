@@ -3,6 +3,8 @@ package SDA;
 import javax.swing.*;
 import java.util.Random;
 
+import static SDA.Checkresult.checkResult;
+
 public class RuchKompa extends PlanszaGlowna {
 
 
@@ -10,14 +12,45 @@ public class RuchKompa extends PlanszaGlowna {
 
     public static void ruchKompa() {
         System.out.println("Ruch Kompa teraz");
+        lbl3.setText("Ruch Gracza o imieniu : " + lbl2.getText());
         losujRuchKompa();
+        checkResult();
     }
 
     public static void losujRuchKompa() {
+        breakFor5Seconds();
         Random rn = new Random();
+        losuj = 0;
         losuj = rn.nextInt(9) + 1;
         System.out.println("Wylosoał komp numer " + losuj);
+
+
         sprawdzCzyJuzByZaznaczony();
+    }
+    public static void breakFor5Seconds()
+    {
+//        for (int i = 2; i >= 0;  i-- )
+//        {
+//            System.out.println(i);
+//            try
+//            {
+//                Thread.sleep(500);
+//            }
+//            catch(InterruptedException e)
+//            {
+//            }
+//        }
+    }
+
+    public static void btnFalse() {
+        System.out.println("ikona pelna. Losuj jeszcze raz");
+        losujRuchKompa();
+    }
+
+    public static void btnTrue() {
+        System.out.println("Ikona pusta Gra dalej");
+
+
     }
 
     public static void sprawdzCzyJuzByZaznaczony() {
@@ -25,14 +58,10 @@ public class RuchKompa extends PlanszaGlowna {
             case 1:
                 //btn1.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
 //                        "Resources/x.jpg"
-                if (btn1.isEnabled()==false )
-                {
-                    System.out.println("ikona pelna. Losuj jeszcze raz");
-                    losujRuchKompa();
-                }else if ( btn1.isEnabled()==true)
-                {
-                    System.out.println("Ikona pusta Gra dalej");
-
+                if (btn1.isEnabled() == false) {
+                    btnFalse();
+                } else if (btn1.isEnabled() == true) {
+                    btnTrue();
                     btn1.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
                             "Resources/o.jpg"
                     )));
@@ -42,13 +71,10 @@ public class RuchKompa extends PlanszaGlowna {
 
                 break;
             case 2:
-                if (btn2.isEnabled()==false )
-                {
-                    System.out.println("ikona pelna. Losuj jeszcze raz");
-                    losujRuchKompa();
-                }else if ( btn2.isEnabled()==true)
-                {
-                    System.out.println("Ikona pusta Gra dalej");
+                if (btn2.isEnabled() == false) {
+                    btnFalse();
+                } else if (btn2.isEnabled() == true) {
+                    btnTrue();
                     btn2.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
                             "Resources/o.jpg"
                     )));
@@ -58,31 +84,24 @@ public class RuchKompa extends PlanszaGlowna {
 
                 break;
             case 3:
-                if (btn3.isEnabled()==false )
-                {
-                    System.out.println("ikona pelna. Losuj jeszcze raz");
-                    losujRuchKompa();
-                }else if ( btn3.isEnabled()==true)
-                {
-                    System.out.println("Ikona pusta Gra dalej");
+                if (btn3.isEnabled() == false) {
+                    btnFalse();
+                } else if (btn3.isEnabled() == true) {
+                    btnTrue();
                     btn3.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
                             "Resources/o.jpg"
                     )));
                     znacznikBtn3 = "o";
                     btn3.setEnabled(false);
-
                 }
 
                 break;
 
             case 4:
-                if (btn4.isEnabled()==false )
-                {
-                    System.out.println("ikona pelna. Losuj jeszcze raz");
-                    losujRuchKompa();
-                }else if ( btn4.isEnabled()==true)
-                {
-                    System.out.println("Ikona pusta Gra dalej");
+                if (btn4.isEnabled() == false) {
+                    btnFalse();
+                } else if (btn4.isEnabled() == true) {
+                    btnTrue();
                     btn4.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
                             "Resources/o.jpg"
                     )));
@@ -93,13 +112,10 @@ public class RuchKompa extends PlanszaGlowna {
                 break;
 
             case 5:
-                if (btn5.isEnabled()==false )
-                {
-                    System.out.println("ikona pelna. Losuj jeszcze raz");
-                    losujRuchKompa();
-                }else if ( btn5.isEnabled()==true)
-                {
-                    System.out.println("Ikona pusta Gra dalej");
+                if (btn5.isEnabled() == false) {
+                    btnFalse();
+                } else if (btn5.isEnabled() == true) {
+                    btnTrue();
                     btn5.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
                             "Resources/o.jpg"
                     )));
@@ -110,13 +126,10 @@ public class RuchKompa extends PlanszaGlowna {
                 break;
 
             case 6:
-                if (btn6.isEnabled()==false )
-                {
-                    System.out.println("ikona pelna. Losuj jeszcze raz");
-                    losujRuchKompa();
-                }else if ( btn6.isEnabled()==true)
-                {
-                    System.out.println("Ikona pusta Gra dalej");
+                if (btn6.isEnabled() == false) {
+                    btnFalse();
+                } else if (btn6.isEnabled() == true) {
+                    btnTrue();
                     btn6.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
                             "Resources/o.jpg"
                     )));
@@ -127,13 +140,10 @@ public class RuchKompa extends PlanszaGlowna {
                 break;
 
             case 7:
-                if (btn7.isEnabled()==false )
-                {
-                    System.out.println("ikona pelna. Losuj jeszcze raz");
-                    losujRuchKompa();
-                }else if ( btn7.isEnabled()==true)
-                {
-                    System.out.println("Ikona pusta Gra dalej");
+                if (btn7.isEnabled() == false) {
+                    btnFalse();
+                } else if (btn7.isEnabled() == true) {
+                    btnTrue();
                     btn7.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
                             "Resources/o.jpg"
                     )));
@@ -144,13 +154,10 @@ public class RuchKompa extends PlanszaGlowna {
                 break;
 
             case 8:
-                if (btn8.isEnabled()==false )
-                {
-                    System.out.println("ikona pelna. Losuj jeszcze raz");
-                    losujRuchKompa();
-                }else if ( btn8.isEnabled()==true)
-                {
-                    System.out.println("Ikona pusta Gra dalej");
+                if (btn8.isEnabled() == false) {
+                    btnFalse();
+                } else if (btn8.isEnabled() == true) {
+                    btnTrue();
                     btn8.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
                             "Resources/o.jpg"
                     )));
@@ -161,13 +168,10 @@ public class RuchKompa extends PlanszaGlowna {
                 break;
 
             case 9:
-                if (btn9.isEnabled()==false )
-                {
-                    System.out.println("ikona pelna. Losuj jeszcze raz");
-                    losujRuchKompa();
-                }else if ( btn9.isEnabled()==true)
-                {
-                    System.out.println("Ikona pusta Gra dalej");
+                if (btn9.isEnabled() == false) {
+                    btnFalse();
+                } else if (btn9.isEnabled() == true) {
+                    btnTrue();
                     btn9.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
                             "Resources/o.jpg"
                     )));
@@ -178,9 +182,8 @@ public class RuchKompa extends PlanszaGlowna {
                 break;
 
 
-
-
         }
+        //lbl3.setText("Ruch Gracza o imieniu : " + lbl1.getText());
     }
 
 }

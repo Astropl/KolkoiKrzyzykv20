@@ -68,7 +68,7 @@ public class Checkresult extends PlanszaGlowna {
             System.out.println("nie ma Na ukos z lewej do prawej  z dołu na góre wygranej");
 
         }
-countRuch();
+//countRuch();//todo: wyłączyłem countRuch na razie chche go zamienic gdzie indziej
 
     }
 
