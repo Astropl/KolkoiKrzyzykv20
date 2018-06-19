@@ -10,11 +10,11 @@ public class StartGame extends PlanszaGlowna
 
         //for (int kolejnyRuch = 1; kolejnyRuch <= 9; kolejnyRuch++) {
             if (ruchOsoba == 0) {
-                lbl3.setText("Ruch Gracza o imieniu : " + lbl1.getText());
+                lbl3.setText("Rozpoczyna Gracz o imieniu : " + lbl1.getText()); //TODO
                 //ruchOsoba = 1;// Todo: zmieniłem odkomentowałem ruchOsoba=1
 
             } else if (ruchOsoba == 1) {
-                lbl3.setText("Ruch Gracza o imieniu : " + lbl2.getText());
+                lbl3.setText("Rozpoczyna Gracz o imieniu : " + lbl2.getText());//TODO
                 //ruchOsoba = 0;// Todo: zmieniłem odkomentowałem ruchOsoba=2
             }
         btnReset.setEnabled(true);

@@ -14,8 +14,6 @@ public class Checkresult extends PlanszaGlowna {
             theWin();
         } else {
             System.out.println("nie ma 1 w rzedzie wygranej");
-
-
         }
 
         if (znacznikBtn4 == znacznikBtn5 && znacznikBtn5 == znacznikBtn6 && znacznikBtn6 == znacznikBtn4) {

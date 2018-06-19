@@ -6,6 +6,7 @@ import java.awt.*;
 public class KonstruktorTekstów {
 
     public static void konstruktorTekstow() {
+
         PlanszaGlowna.btn1.setText("");
         PlanszaGlowna.btn2.setText("");
         PlanszaGlowna.btn3.setText("");
@@ -24,11 +25,13 @@ public class KonstruktorTekstów {
         PlanszaGlowna.lbl12.setText("GRACZ nr 2");
         //PlanszaGlowna.lbl1.setFont(new Font("Arial", Font.BOLD, 15));
         PlanszaGlowna.lbl1.setFont(new Font("Arial", Font.BOLD, 15));
-        PlanszaGlowna.lbl3.setFont(new Font("Arial", Font.BOLD, 15));
+        PlanszaGlowna.lbl2.setFont(new Font("Arial", Font.BOLD, 15));
+        PlanszaGlowna.lbl3.setFont(new Font("Arial", Font.BOLD, 20));
+
         PlanszaGlowna.lbl4.setText("Current Name");
         PlanszaGlowna.btnReset.setText("RESET");
         PlanszaGlowna.chBox.setText("Osoba - Osoba");
-        PlanszaGlowna.lbl5.setText(convertToMultiline("Zaznacz żeby grac z komputerem. Odznaczone to gra dwóch osób."));
+        PlanszaGlowna.lbl5.setText(convertToMultiline("Zaznacz żeby grac z komputerem. \nOdznaczone to gra dwóch osób."));
     }
 
     public static String convertToMultiline(String orig) {

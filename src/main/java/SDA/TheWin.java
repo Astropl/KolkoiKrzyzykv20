@@ -6,6 +6,8 @@ public class TheWin extends PlanszaGlowna
 
 {
     public static void theWin() {
+        NewThread newThread = new NewThread();
+        Thread thread = new Thread(newThread);
         JOptionPane.showMessageDialog(null, "Hura wygrał: " + lbl4.getText() + " :)");
         btn1.setEnabled(false);
         btn2.setEnabled(false);
@@ -17,5 +19,10 @@ public class TheWin extends PlanszaGlowna
         btn8.setEnabled(false);
         btn9.setEnabled(false);
         lbl3.setText("WYGRANA  GRACZA O IMIENIU: " + lbl4.getText());
+        System.out.println("Wyłaczam drugi wątek");
+        koniec = true;
+                thread.stop();
+
+
     }
 }

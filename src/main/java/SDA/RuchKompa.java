@@ -11,11 +11,19 @@ public class RuchKompa extends PlanszaGlowna {
     public static int losuj;
 
     public static void ruchKompa() {
-        System.out.println("Ruch Kompa teraz");
-        lbl3.setText("Ruch Gracza o imieniu : " + lbl2.getText());
-        losujRuchKompa();
         checkResult();
-    }
+        if (koniec)
+        {
+            System.out.println("Koniec na True");
+
+        }else {
+        System.out.println("Ruch Kompa teraz");
+        lbl3.setText("Ruch Gracza o imieniu : " + lbl2.getText());//Todo
+
+
+        losujRuchKompa();
+        lbl3.setText("Ruch Gracza o imieniu : " + lbl1.getText());//Todo
+    }}
 
     public static void losujRuchKompa() {
         breakFor5Seconds();
@@ -29,6 +37,7 @@ public class RuchKompa extends PlanszaGlowna {
     }
     public static void breakFor5Seconds()
     {
+        System.out.println("Przerwa kilka sekund");
 //        for (int i = 2; i >= 0;  i-- )
 //        {
 //            System.out.println(i);

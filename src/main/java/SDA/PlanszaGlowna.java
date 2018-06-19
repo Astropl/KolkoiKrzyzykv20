@@ -36,6 +36,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
     static String znacznikBtn7 = "7", znacznikBtn8 = "8", znacznikBtn9 = "9";
 
     boolean bol = false;
+    static boolean koniec = false;
     static int countRuch = 0;
     ButtonsDisabledOnFirst btdof = new ButtonsDisabledOnFirst();
     KonstruktorButtonow kb = new KonstruktorButtonow();
@@ -110,20 +111,23 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
     }
 
 
+
     public void actionPerformed(ActionEvent e) {
+        NewThread newThread = new NewThread();
+        Thread thread = new Thread(newThread);
         Object source = e.getSource();
         if (source == btn1) {
             if (ruchOsoba == 0) {
                 btn1.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
                         "Resources/x.jpg")));
-                System.out.println(lbl1.getText()+" zaznaczył 1x");
+                System.out.println(lbl1.getText() + " zaznaczył 1x");
                 znacznikBtn1 = "x";
 
             } else if (ruchOsoba == 1) {
                 btn1.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
                         "Resources/o.jpg"
                 )));
-                System.out.println(lbl2.getText()+" zaznaczył 1o");
+                System.out.println(lbl2.getText() + " zaznaczył 1o");
                 znacznikBtn1 = "o";
 
             } else if (ruchOsoba == 2) {
@@ -131,14 +135,15 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
                 btn1.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
                         "Resources/o.jpg"
                 )));
-                System.out.println(lbl2.getText()+" zaznaczył 1o");
+                System.out.println(lbl2.getText() + " zaznaczył 1o");
                 znacznikBtn1 = "o";
 
             }
-            countRuch();
-            btn1.setEnabled(false);
+            thread.start();
+
+            PlanszaGlowna.btn1.setEnabled(false);
             System.out.println("Nacinall 1");
-            ruchOsoba();
+
 
         } else if (source == btn2) {
             if (ruchOsoba == 0) {
@@ -161,9 +166,10 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
                 znacznikBtn2 = "o";
 
             }
-countRuch();
+            thread.start();
+
             btn2.setEnabled(false);
-            ruchOsoba();
+
             System.out.println("Nacoisnl 2");
         } else if (source == btn3) {
 
@@ -187,9 +193,10 @@ countRuch();
                 znacznikBtn3 = "o";
 
             }
-            countRuch();
+            thread.start();
+            //countRuch();
             btn3.setEnabled(false);
-            ruchOsoba();
+            //ruchOsoba();
             System.out.println("Nacoisnl 3");
         } else if (source == btn4) {
             if (ruchOsoba == 0) {
@@ -212,9 +219,10 @@ countRuch();
                 znacznikBtn4 = "o";
 
             }
-            countRuch();
+            thread.start();
+            //countRuch();
             btn4.setEnabled(false);
-            ruchOsoba();
+            //ruchOsoba();
             System.out.println("Nacoisnl 4");
         } else if (source == btn5) {
             if (ruchOsoba == 0) {
@@ -237,9 +245,10 @@ countRuch();
                 znacznikBtn5 = "o";
 
             }
-            countRuch();
+            thread.start();
+            //countRuch();
             btn5.setEnabled(false);
-            ruchOsoba();
+            //ruchOsoba();
             System.out.println("Nacoisnl 5");
         } else if (source == btn6) {
             if (ruchOsoba == 0) {
@@ -262,10 +271,10 @@ countRuch();
                 znacznikBtn6 = "o";
 
             }
-
-            countRuch();
+            thread.start();
+            //countRuch();
             btn6.setEnabled(false);
-            ruchOsoba();
+            //ruchOsoba();
             System.out.println("Nacoisnl 6");
         } else if (source == btn7) {
             if (ruchOsoba == 0) {
@@ -288,9 +297,10 @@ countRuch();
                 znacznikBtn7 = "o";
 
             }
-            countRuch();
+            thread.start();
+            //countRuch();
             btn7.setEnabled(false);
-            ruchOsoba();
+            //ruchOsoba();
             System.out.println("Nacoisnl 7");
         } else if (source == btn8) {
             if (ruchOsoba == 0) {
@@ -313,9 +323,10 @@ countRuch();
                 znacznikBtn8 = "o";
 
             }
-            countRuch();
+            thread.start();
+            //countRuch();
             btn8.setEnabled(false);
-            ruchOsoba();
+            //ruchOsoba();
             System.out.println("/Nacoisnl 8");
         } else if (source == btn9) {
             if (ruchOsoba == 0) {
@@ -338,9 +349,10 @@ countRuch();
                 znacznikBtn9 = "o";
 
             }
-            countRuch();
+            thread.start();
+            //countRuch();
             btn9.setEnabled(false);
-            ruchOsoba();
+            //ruchOsoba();
             System.out.println("/Nacoisnl 9");
         } else if (source == btnReset)
 
@@ -354,6 +366,7 @@ countRuch();
             UstawImiona.ustawImiona();
             btnGraj.setEnabled(false);
             System.out.println("Nacoisnl btnGraj");
+            System.out.println("***************");
             //lbl3.setText("Rozpoczyna Gracz o imieniu : " + lbl1.getText());
             btdof.buttonsDisabledOnFirst(true);
             sL.setLabels(true);

@@ -4,6 +4,9 @@ import javax.swing.*;
 
 public class ResetSettings extends PlanszaGlowna {
     public static void resetSettings() {
+        NewThread newThread = new NewThread();
+        Thread thread = new Thread(newThread);
+        thread.stop();
         System.out.println("Resetuje butony");
         btnReset.setEnabled(false);
         KonstruktorTekstów.konstruktorTekstow();
@@ -46,6 +49,7 @@ public class ResetSettings extends PlanszaGlowna {
         chBox.setVisible(true);
         lbl5.setVisible(true);
         countRuch=0;
+        koniec =false;
 
     }
 
