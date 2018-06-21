@@ -6,6 +6,7 @@ public class CountRuch extends PlanszaGlowna {
 
 
     public static void countRuch() {
+        System.out.println("Coubt ruch");
         NewThread newThread = new NewThread();
         Thread thread = new Thread(newThread);
         countRuch++;

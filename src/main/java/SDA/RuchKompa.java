@@ -11,18 +11,24 @@ public class RuchKompa extends PlanszaGlowna {
     public static int losuj;
 
     public static void ruchKompa() {
+        lbl4.setText(lbl2.getText());
+        lbl3.setText("Ruch Kompa o imieniu :"+lbl4.getText());
+        System.out.println("**************");
+        System.out.println("Ruch Kompa");
         checkResult();
         if (koniec)
         {
             System.out.println("Koniec na True");
 
         }else {
+            //lbl3.setText(lbl2.getText());
         System.out.println("Ruch Kompa teraz");
-        lbl3.setText("Ruch Gracza o imieniu : " + lbl2.getText());//Todo
+//        lbl4.setText("Ruch Kompa o imieniu : " + lbl3.getText());//Todo
 
 
         losujRuchKompa();
-        lbl3.setText("Ruch Gracza o imieniu : " + lbl1.getText());//Todo
+            //lbl3.setText(lbl1.getText());
+//        lbl4.setText("Ruch Gracza o imieniu : " + lbl3.getText());//Todo
     }}
 
     public static void losujRuchKompa() {

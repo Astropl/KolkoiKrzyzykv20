@@ -113,6 +113,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
 
 
     public void actionPerformed(ActionEvent e) {
+        System.out.println("Plansza Glowna");
         NewThread newThread = new NewThread();
         Thread thread = new Thread(newThread);
         Object source = e.getSource();
@@ -159,6 +160,8 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
                 znacznikBtn2 = "o";
 
             } else if (ruchOsoba == 2) {
+//                lbl3.setText(lbl2.getText());
+//                lbl4.setText("3Ruch Kompa o imieniu :"+ lbl3.getText());
                 System.out.println("Ruch kompa");
                 btn2.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
                         "Resources/o.jpg"
@@ -354,6 +357,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
             btn9.setEnabled(false);
             //ruchOsoba();
             System.out.println("/Nacoisnl 9");
+
         } else if (source == btnReset)
 
         {
@@ -361,6 +365,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
 
 
             System.out.println("Nacisnal RESET");
+
         } else if (source == btnGraj) {
 
             UstawImiona.ustawImiona();
