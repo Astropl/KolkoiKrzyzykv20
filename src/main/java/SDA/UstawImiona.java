@@ -21,7 +21,7 @@ public class UstawImiona {
             imie2 = JOptionPane.showInputDialog("Player 2 podaj swoje  imie");
         }
         PlanszaGlowna.lbl2.setText(imie2);
-        PlanszaGlowna.lbl3.setText("1Rozpoczyna Gracz o imeniu :" +PlanszaGlowna.lbl1.getText());
+        PlanszaGlowna.lbl3.setText("Rozpoczyna Gracz o imeniu :" +PlanszaGlowna.lbl1.getText());
         PlanszaGlowna.lbl4.setText(PlanszaGlowna.lbl1.getText());
         StartGame.startGame();
     }

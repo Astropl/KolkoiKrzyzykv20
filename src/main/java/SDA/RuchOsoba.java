@@ -35,7 +35,7 @@ public class RuchOsoba extends PlanszaGlowna
             }
             if (!koniec) {
                 //lbl4.setText(lbl1.getText());
-                lbl3.setText("C3Ruch Gracza o imieniu : " + lbl4.getText());
+                lbl3.setText("Ruch Gracza o imieniu : " + lbl4.getText());
             }
         }
     }
