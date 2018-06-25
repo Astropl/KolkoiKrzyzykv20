@@ -4,8 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-
+import java.awt.event.KeyEvent;
 
 
 public class PlanszaGlowna extends JFrame implements ActionListener {
@@ -29,6 +28,11 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
     public static JButton btnReset;
     public static JCheckBox chBox;
 
+    public static JMenuBar menuBar;
+    public static JMenu menu;
+    public static JMenuItem jMenuItem;
+
+
     static int ruchOsoba = 0; // 0 osoba numer 1, 1 osoba numer 2, 2  komputer BAJTEK
     static String znacznikBtn1 = "1", znacznikBtn2 = "2", znacznikBtn3 = "3";
     static String znacznikBtn4 = "4", znacznikBtn5 = "5", znacznikBtn6 = "6";
@@ -44,7 +48,12 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
     SetLabels sL = new SetLabels();
 
 
+    //**********
+
+
     public void planszaGlowna() {
+        initUI();
+
 
         kb.kontruktorButonow();
         konstruktorAddKontenerow();
@@ -109,7 +118,34 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
         kontener.add(lbl5);
     }
 
+    //**************************
+    private void initUI() {
 
+        createMenuBar();
+
+
+        setLocationRelativeTo(null);
+
+    }
+
+    private void createMenuBar() {
+
+        JMenuBar menubar = new JMenuBar();
+        ImageIcon exitIcon = new ImageIcon("Resources/exit1.jpg");
+
+        JMenu file = new JMenu("File");
+        file.setMnemonic(KeyEvent.VK_F);
+
+        JMenuItem eMenuItem = new JMenuItem("Exit", exitIcon);
+        eMenuItem.setMnemonic(KeyEvent.VK_E);
+        eMenuItem.setToolTipText("Exit application");
+        eMenuItem.addActionListener((ActionEvent event) -> {
+            System.exit(0);
+        });
+        file.add(eMenuItem);
+        menubar.add(file);
+        setJMenuBar(menubar);
+    }
 
     public void actionPerformed(ActionEvent e) {
         System.out.println("Plansza Glowna");
