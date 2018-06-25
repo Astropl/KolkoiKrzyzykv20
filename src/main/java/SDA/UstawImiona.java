@@ -13,10 +13,10 @@ public class UstawImiona {
         if (PlanszaGlowna.chBox.isSelected())
         {
             JOptionPane.showMessageDialog(null, "Komputer będzie mia na imię BAJTEK: ");
-            //String imie2 = JOptionPane.showDialog("Player 2 podaj swoje  imie");
+
             imie2 = "BAJTEK";
             System.out.println("Ustawiam imie komputera na Bajtek");
-            //PlanszaGlowna.ruchOsoba =0;
+
         }else {
             imie2 = JOptionPane.showInputDialog("Player 2 podaj swoje  imie");
         }

@@ -22,7 +22,7 @@ public class KonstruktorRozmiarButtonow {
 
         PlanszaGlowna.lbl12.setBounds(350, 190, 80, 40);
         PlanszaGlowna.lbl2.setBounds(350, 210, 80, 40);
-        PlanszaGlowna.lbl4.setBounds(350, 290, 50, 40);/////////
+        PlanszaGlowna.lbl4.setBounds(350, 290, 50, 40);//
         PlanszaGlowna.lbl3.setBounds(10, 380, 450, 50);
 
 

@@ -11,25 +11,23 @@ public class RuchKompa extends PlanszaGlowna {
     public static int losuj;
 
     public static void ruchKompa() {
+        if (!koniec) {
+            countRuch ++;
         lbl4.setText(lbl2.getText());
         lbl3.setText("Ruch Kompa o imieniu :"+lbl4.getText());
         System.out.println("**************");
         System.out.println("Ruch Kompa");
-        checkResult();
+
         if (koniec)
         {
             System.out.println("Koniec na True");
 
         }else {
-            //lbl3.setText(lbl2.getText());
-        System.out.println("Ruch Kompa teraz");
-//        lbl4.setText("Ruch Kompa o imieniu : " + lbl3.getText());//Todo
-
-
-        losujRuchKompa();
-            //lbl3.setText(lbl1.getText());
-//        lbl4.setText("Ruch Gracza o imieniu : " + lbl3.getText());//Todo
-    }}
+            System.out.println("Ruch Kompa teraz");
+            losujRuchKompa();
+            checkResult();
+            lbl4.setText(lbl1.getText());
+    }}}
 
     public static void losujRuchKompa() {
         breakFor5Seconds();
@@ -37,8 +35,6 @@ public class RuchKompa extends PlanszaGlowna {
         losuj = 0;
         losuj = rn.nextInt(9) + 1;
         System.out.println("Wylosoał komp numer " + losuj);
-
-
         sprawdzCzyJuzByZaznaczony();
     }
     public static void breakFor5Seconds()
@@ -71,8 +67,7 @@ public class RuchKompa extends PlanszaGlowna {
     public static void sprawdzCzyJuzByZaznaczony() {
         switch (losuj) {
             case 1:
-                //btn1.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-//                        "Resources/x.jpg"
+
                 if (btn1.isEnabled() == false) {
                     btnFalse();
                 } else if (btn1.isEnabled() == true) {
@@ -198,9 +193,7 @@ public class RuchKompa extends PlanszaGlowna {
 
 
         }
-        //lbl3.setText("Ruch Gracza o imieniu : " + lbl1.getText());
+
     }
 
 }
-//btn1.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-//                        "Resources/x.jpg"

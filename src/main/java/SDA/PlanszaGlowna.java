@@ -5,8 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import static SDA.CountRuch.countRuch;
-import static SDA.RuchOsoba.ruchOsoba;
+
 
 
 public class PlanszaGlowna extends JFrame implements ActionListener {
@@ -160,8 +159,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
                 znacznikBtn2 = "o";
 
             } else if (ruchOsoba == 2) {
-//                lbl3.setText(lbl2.getText());
-//                lbl4.setText("3Ruch Kompa o imieniu :"+ lbl3.getText());
+
                 System.out.println("Ruch kompa");
                 btn2.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
                         "Resources/o.jpg"
@@ -197,9 +195,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
 
             }
             thread.start();
-            //countRuch();
             btn3.setEnabled(false);
-            //ruchOsoba();
             System.out.println("Nacoisnl 3");
         } else if (source == btn4) {
             if (ruchOsoba == 0) {
@@ -223,9 +219,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
 
             }
             thread.start();
-            //countRuch();
             btn4.setEnabled(false);
-            //ruchOsoba();
             System.out.println("Nacoisnl 4");
         } else if (source == btn5) {
             if (ruchOsoba == 0) {
@@ -249,9 +243,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
 
             }
             thread.start();
-            //countRuch();
             btn5.setEnabled(false);
-            //ruchOsoba();
             System.out.println("Nacoisnl 5");
         } else if (source == btn6) {
             if (ruchOsoba == 0) {
@@ -275,9 +267,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
 
             }
             thread.start();
-            //countRuch();
             btn6.setEnabled(false);
-            //ruchOsoba();
             System.out.println("Nacoisnl 6");
         } else if (source == btn7) {
             if (ruchOsoba == 0) {
@@ -301,9 +291,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
 
             }
             thread.start();
-            //countRuch();
             btn7.setEnabled(false);
-            //ruchOsoba();
             System.out.println("Nacoisnl 7");
         } else if (source == btn8) {
             if (ruchOsoba == 0) {
@@ -327,9 +315,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
 
             }
             thread.start();
-            //countRuch();
             btn8.setEnabled(false);
-            //ruchOsoba();
             System.out.println("/Nacoisnl 8");
         } else if (source == btn9) {
             if (ruchOsoba == 0) {
@@ -353,17 +339,13 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
 
             }
             thread.start();
-            //countRuch();
             btn9.setEnabled(false);
-            //ruchOsoba();
             System.out.println("/Nacoisnl 9");
 
         } else if (source == btnReset)
 
         {
             ResetSettings.resetSettings();
-
-
             System.out.println("Nacisnal RESET");
 
         } else if (source == btnGraj) {
@@ -372,7 +354,6 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
             btnGraj.setEnabled(false);
             System.out.println("Nacoisnl btnGraj");
             System.out.println("***************");
-            //lbl3.setText("Rozpoczyna Gracz o imieniu : " + lbl1.getText());
             btdof.buttonsDisabledOnFirst(true);
             sL.setLabels(true);
             chBox.setVisible(false);

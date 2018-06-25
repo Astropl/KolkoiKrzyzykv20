@@ -9,11 +9,9 @@ public class NewThread implements Runnable {
 
     @Override
     public void run() {
-        lbl3.setText("2Rucha Gracza o imienieu :"+ lbl4.getText());
+
         System.out.println("nowy watek");
-
         countRuch();
-
         ruchOsoba();
     }
 }

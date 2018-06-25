@@ -6,6 +6,7 @@ public class TheWin extends PlanszaGlowna
 
 {
     public static void theWin() {
+        koniec = true;
         NewThread newThread = new NewThread();
         Thread thread = new Thread(newThread);
         JOptionPane.showMessageDialog(null, "Hura wygrał: " + lbl4.getText() + " :)");

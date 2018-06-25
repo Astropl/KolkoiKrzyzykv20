@@ -23,7 +23,7 @@ public class KonstruktorTekstów {
 
         PlanszaGlowna.lbl2.setText("imie 2");
         PlanszaGlowna.lbl12.setText("GRACZ nr 2");
-        //PlanszaGlowna.lbl1.setFont(new Font("Arial", Font.BOLD, 15));
+
         PlanszaGlowna.lbl1.setFont(new Font("Arial", Font.BOLD, 15));
         PlanszaGlowna.lbl2.setFont(new Font("Arial", Font.BOLD, 15));
         PlanszaGlowna.lbl3.setFont(new Font("Arial", Font.BOLD, 20));
