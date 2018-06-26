@@ -228,7 +228,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
             }
             thread.start();
 
-            PlanszaGlowna.btn1.setEnabled(false);
+            btn1.setEnabled(false);
             System.out.println("Nacinall 1");
 
 
