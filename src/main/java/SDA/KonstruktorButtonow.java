@@ -26,6 +26,8 @@ public class KonstruktorButtonow
         PlanszaGlowna.btnReset = new JButton();
         PlanszaGlowna.chBox = new JCheckBox();
         PlanszaGlowna.lbl5 = new JLabel();
+
+
     }
 
 }

@@ -6,6 +6,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
+import static SDA.SetEnglish.setEnglish;
+import static SDA.SetGerman.setGerman;
+import static SDA.SetPolish.setPolish;
+
 
 public class PlanszaGlowna extends JFrame implements ActionListener {
     public static JButton btn1;
@@ -46,6 +50,26 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
     KonstruktorRozmiarButtonow krb = new KonstruktorRozmiarButtonow();
     KonstruktorTekstów kt = new KonstruktorTekstów();
     SetLabels sL = new SetLabels();
+    static SetPolish setPolish = new SetPolish();
+    static SetEnglish setEnglish = new SetEnglish();
+    static SetGerman setGerman = new SetGerman();
+
+    JMenuBar menubar = new JMenuBar();
+    JRadioButtonMenuItem mOsobaKomp = new JRadioButtonMenuItem("Osoba - Komp");
+    static JMenu file = new JMenu("Plik");
+    static JMenu settings = new JMenu("Ustawienia");
+    ImageIcon exitIcon = new ImageIcon("Resources/exit.png");
+    JMenuItem eExit = new JMenuItem("Wyjscie",exitIcon);
+
+    JMenu eLanguage = new JMenu("Język");
+    JRadioButtonMenuItem ePolsh = new JRadioButtonMenuItem("Polski", true);
+    JRadioButtonMenuItem eEnglish = new JRadioButtonMenuItem("Angielski");
+    JRadioButtonMenuItem eGerman = new JRadioButtonMenuItem("Niemiecki");
+    JMenu eChoiceTypeGame = new JMenu("Wybór trybu");
+    JRadioButtonMenuItem mOsobaOsoba = new JRadioButtonMenuItem("Osoba - Osoba", true);
+    ButtonGroup directionGroup1 = new ButtonGroup();
+    ButtonGroup directionGroup2 = new ButtonGroup();
+
 
 
     //**********
@@ -71,7 +95,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
     public PlanszaGlowna() {
         this.bol = bol;
         this.setLayout(null);
-        this.setSize(500, 500);
+        this.setSize(500, 600);
         this.setTitle(" Kółko i Krzyżyk");
         this.setResizable(false);
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -92,6 +116,13 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
         btn9.addActionListener(this);
         btnReset.addActionListener(this);
         chBox.addActionListener(this);
+        mOsobaKomp.addActionListener(this);
+        mOsobaOsoba.addActionListener(this);
+        ePolsh.addActionListener(this);
+        eEnglish.addActionListener(this);
+        eGerman.addActionListener(this);
+
+
     }
 
 
@@ -130,27 +161,16 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
 
     private void createMenuBar() {
 
-        JMenuBar menubar = new JMenuBar();
-        ImageIcon exitIcon = new ImageIcon("Resources/exit.png");
 
-        JMenu file = new JMenu("Plik");
-        JMenu settings = new JMenu("Ustawienia");
+
+
+
         file.setMnemonic(KeyEvent.VK_F);
 
-        JMenuItem eExit = new JMenuItem("Wyjscie", exitIcon);
-        JMenu eLanguage = new JMenu("Język");
-        JRadioButtonMenuItem ePolsh = new JRadioButtonMenuItem("Polski",true);
-        JRadioButtonMenuItem eEnglish = new JRadioButtonMenuItem("Angielski");
-        JRadioButtonMenuItem eGerman = new JRadioButtonMenuItem("Niemiecki");
-        JMenu eChoiceTypeGame = new JMenu("Wybór trybu");
-        JRadioButtonMenuItem mOsobaKomp = new JRadioButtonMenuItem("Osoba - Komp");
-        JRadioButtonMenuItem mOsobaOsoba = new JRadioButtonMenuItem("Osoba - Osoba",true);
 
-        ButtonGroup directionGroup1 = new ButtonGroup();
-        ButtonGroup directionGroup2 = new ButtonGroup();
 
         eExit.setMnemonic(KeyEvent.VK_E);
-        eExit.setToolTipText("Exit application");
+        eExit.setToolTipText("Zamknięcie aplikacji");
         eExit.addActionListener((ActionEvent event) -> {
             System.exit(0);
         });
@@ -158,7 +178,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
         settings.add(eLanguage);
         settings.addSeparator();
         settings.add(eChoiceTypeGame);
-        //eLanguage.add(ePolsh);
+
         eLanguage.add(ePolsh);
         eLanguage.add(eEnglish);
         eLanguage.add(eGerman);
@@ -169,8 +189,8 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
 
         eChoiceTypeGame.add(mOsobaKomp);
         eChoiceTypeGame.add(mOsobaOsoba);
-directionGroup2.add(mOsobaOsoba);
-directionGroup2.add(mOsobaKomp);
+        directionGroup2.add(mOsobaOsoba);
+        directionGroup2.add(mOsobaKomp);
         menubar.add(file);
         menubar.add(settings);
 
@@ -433,8 +453,37 @@ directionGroup2.add(mOsobaKomp);
             } else if (chBox.isSelected() == false) {
                 chBox.setText("Osoba - Osoba");
             }
+        } else if (source == mOsobaKomp)
+        { mOsobaKomp.isSelected();
+            System.out.println("Zmiana mOsoba na checked");
+            chBox.setSelected(true);
+            chBox.setText("Osoba - Komputer");
+        }
+        else if (source == mOsobaOsoba)
+        {
+            mOsobaOsoba.isSelected();
+            System.out.println("Zmiana osoba osoba na checked");
+           chBox.setSelected(false);
+            chBox.setText("Osoba - Osoba");
         }
 
+        else if (source ==ePolsh)
+        {
+            System.out.println("Wybór polskich liter");
+            //settings.setText("Ustawienia");
+
+           setPolish();
+        }
+        else if (source ==eEnglish)
+        {
+            System.out.println("Wybór angielkisch liter");
+           setEnglish();
+        }
+        else if (source ==eGerman)
+        {
+            System.out.println("Wybór niemieckich liter");
+            setGerman();
+        }
     }
 
 }
