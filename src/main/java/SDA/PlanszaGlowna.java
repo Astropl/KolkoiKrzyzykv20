@@ -131,20 +131,51 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
     private void createMenuBar() {
 
         JMenuBar menubar = new JMenuBar();
-        ImageIcon exitIcon = new ImageIcon("Resources/exit1.jpg");
+        ImageIcon exitIcon = new ImageIcon("Resources/exit.png");
 
-        JMenu file = new JMenu("File");
+        JMenu file = new JMenu("Plik");
+        JMenu settings = new JMenu("Ustawienia");
         file.setMnemonic(KeyEvent.VK_F);
 
-        JMenuItem eMenuItem = new JMenuItem("Exit", exitIcon);
-        eMenuItem.setMnemonic(KeyEvent.VK_E);
-        eMenuItem.setToolTipText("Exit application");
-        eMenuItem.addActionListener((ActionEvent event) -> {
+        JMenuItem eExit = new JMenuItem("Wyjscie", exitIcon);
+        JMenu eLanguage = new JMenu("Język");
+        JRadioButtonMenuItem ePolsh = new JRadioButtonMenuItem("Polski",true);
+        JRadioButtonMenuItem eEnglish = new JRadioButtonMenuItem("Angielski");
+        JRadioButtonMenuItem eGerman = new JRadioButtonMenuItem("Niemiecki");
+        JMenu eChoiceTypeGame = new JMenu("Wybór trybu");
+        JRadioButtonMenuItem mOsobaKomp = new JRadioButtonMenuItem("Osoba - Komp");
+        JRadioButtonMenuItem mOsobaOsoba = new JRadioButtonMenuItem("Osoba - Osoba",true);
+
+        ButtonGroup directionGroup1 = new ButtonGroup();
+        ButtonGroup directionGroup2 = new ButtonGroup();
+
+        eExit.setMnemonic(KeyEvent.VK_E);
+        eExit.setToolTipText("Exit application");
+        eExit.addActionListener((ActionEvent event) -> {
             System.exit(0);
         });
-        file.add(eMenuItem);
+        file.add(eExit);
+        settings.add(eLanguage);
+        settings.addSeparator();
+        settings.add(eChoiceTypeGame);
+        //eLanguage.add(ePolsh);
+        eLanguage.add(ePolsh);
+        eLanguage.add(eEnglish);
+        eLanguage.add(eGerman);
+        directionGroup1.add(ePolsh);
+        directionGroup1.add(eEnglish);
+        directionGroup1.add(eGerman);
+
+
+        eChoiceTypeGame.add(mOsobaKomp);
+        eChoiceTypeGame.add(mOsobaOsoba);
+directionGroup2.add(mOsobaOsoba);
+directionGroup2.add(mOsobaKomp);
         menubar.add(file);
+        menubar.add(settings);
+
         setJMenuBar(menubar);
+
     }
 
     public void actionPerformed(ActionEvent e) {
