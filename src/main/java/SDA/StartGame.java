@@ -2,11 +2,22 @@ package SDA;
 
 import javax.swing.*;
 
+import static SDA.SetEnglish.setEnglish;
+import static SDA.SetGerman.setGerman;
+import static SDA.SetPolish.setPolish;
+
 public class StartGame extends PlanszaGlowna
 {
+    static String message = "No to zaczynamy";
     public static void startGame ()
     {
-        JOptionPane.showMessageDialog(null, "No to zaczynamy");
+        if (setLocal.equals("pol"))
+            setPolish();
+        else if (setLocal.equals("eng"))
+            setEnglish();
+        else if (setLocal.equals("ger"))
+            setGerman();
+        JOptionPane.showMessageDialog(null, message);
 
 
             if (ruchOsoba == 0) {

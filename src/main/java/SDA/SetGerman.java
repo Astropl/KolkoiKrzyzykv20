@@ -22,7 +22,11 @@ public class SetGerman {
         PlanszaGlowna.ePolsh.setText("Polnisch");
         PlanszaGlowna.eEnglish.setText("English");
         PlanszaGlowna.eGerman.setText("Deutsch");
-
+        PlanszaGlowna.eChoiceTypeGame.setText("Modusauswahl");
+        UstawImiona.message1 = "Spieler 1 geben Sie Ihren Namen";
+        UstawImiona.message2 = "Der Computer wird BAJTEK heißen: ";
+        UstawImiona.message3 = "Spieler 2 geben Sie Ihren Namen";
+        StartGame.message = "Nun, wir fangen an";
 
 
     }

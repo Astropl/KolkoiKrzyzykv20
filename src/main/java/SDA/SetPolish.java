@@ -20,7 +20,12 @@ public class SetPolish {
         PlanszaGlowna.ePolsh.setText("Polski");
         PlanszaGlowna.eEnglish.setText("Angielski");
         PlanszaGlowna.eGerman.setText("Niemiecki");
+        PlanszaGlowna.eChoiceTypeGame.setText("Wybór trybu");
 
+        UstawImiona.message1 = "Player 1 podaj swoje  imie";
+        UstawImiona.message2 = "Komputer będzie miał na imię BAJTEK: ";
+        UstawImiona.message3 = "Player 2 podaj swoje  imie";
+        StartGame.message = "No to zaczynamy";
 
     }
 

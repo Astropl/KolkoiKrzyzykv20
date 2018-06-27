@@ -66,7 +66,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
     static JRadioButtonMenuItem ePolsh = new JRadioButtonMenuItem("Polski", true);
     static JRadioButtonMenuItem eEnglish = new JRadioButtonMenuItem("Angielski");
     static JRadioButtonMenuItem eGerman = new JRadioButtonMenuItem("Niemiecki");
-    JMenu eChoiceTypeGame = new JMenu("Wybór trybu");
+    static JMenu eChoiceTypeGame = new JMenu("Wybór trybu");
     JRadioButtonMenuItem mOsobaOsoba = new JRadioButtonMenuItem("Osoba - Osoba", true);
     ButtonGroup directionGroup1 = new ButtonGroup();
     ButtonGroup directionGroup2 = new ButtonGroup();
