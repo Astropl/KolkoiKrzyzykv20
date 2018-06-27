@@ -50,6 +50,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
     KonstruktorRozmiarButtonow krb = new KonstruktorRozmiarButtonow();
     KonstruktorTekstów kt = new KonstruktorTekstów();
     SetLabels sL = new SetLabels();
+    static String setLocal = "pol";
     static SetPolish setPolish = new SetPolish();
     static SetEnglish setEnglish = new SetEnglish();
     static SetGerman setGerman = new SetGerman();
@@ -59,22 +60,16 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
     static JMenu file = new JMenu("Plik");
     static JMenu settings = new JMenu("Ustawienia");
     ImageIcon exitIcon = new ImageIcon("Resources/exit.png");
-    JMenuItem eExit = new JMenuItem("Wyjscie",exitIcon);
+    static JMenuItem eExit = new JMenuItem("Wyjscie");
 
-    JMenu eLanguage = new JMenu("Język");
-    JRadioButtonMenuItem ePolsh = new JRadioButtonMenuItem("Polski", true);
-    JRadioButtonMenuItem eEnglish = new JRadioButtonMenuItem("Angielski");
-    JRadioButtonMenuItem eGerman = new JRadioButtonMenuItem("Niemiecki");
+    static JMenu eLanguage = new JMenu("Język");
+    static JRadioButtonMenuItem ePolsh = new JRadioButtonMenuItem("Polski", true);
+    static JRadioButtonMenuItem eEnglish = new JRadioButtonMenuItem("Angielski");
+    static JRadioButtonMenuItem eGerman = new JRadioButtonMenuItem("Niemiecki");
     JMenu eChoiceTypeGame = new JMenu("Wybór trybu");
     JRadioButtonMenuItem mOsobaOsoba = new JRadioButtonMenuItem("Osoba - Osoba", true);
     ButtonGroup directionGroup1 = new ButtonGroup();
     ButtonGroup directionGroup2 = new ButtonGroup();
-
-// jakis coment do gita test
-    // tak
-    
-
-    //**********
 
 
     public void planszaGlowna() {
@@ -164,11 +159,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
     private void createMenuBar() {
 
 
-
-
-
         file.setMnemonic(KeyEvent.VK_F);
-
 
 
         eExit.setMnemonic(KeyEvent.VK_E);
@@ -451,41 +442,54 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
             System.out.println("Zmiana ststusu CheckBoxa");
 
             if (chBox.isSelected()) {
-                chBox.setText("Osoba - Komputer");
+                setLocalMetoda(setLocal);
+                mOsobaKomp.setSelected(true);
+                mOsobaOsoba.setSelected(false);
+                //chBox.setText("Osoba - Komputer");
             } else if (chBox.isSelected() == false) {
-                chBox.setText("Osoba - Osoba");
+                setLocalMetoda(setLocal);
+                mOsobaKomp.setSelected(false);
+                mOsobaOsoba.setSelected(true);
+                //chBox.setText("Osoba - Osoba");
             }
-        } else if (source == mOsobaKomp)
-        { mOsobaKomp.isSelected();
+        } else if (source == mOsobaKomp) {
+            mOsobaKomp.isSelected();
             System.out.println("Zmiana mOsoba na checked");
             chBox.setSelected(true);
-            chBox.setText("Osoba - Komputer");
-        }
-        else if (source == mOsobaOsoba)
-        {
+            //chBox.setText("Osoba - Komputer");
+            setLocalMetoda(setLocal);
+        } else if (source == mOsobaOsoba) {
             mOsobaOsoba.isSelected();
             System.out.println("Zmiana osoba osoba na checked");
-           chBox.setSelected(false);
-            chBox.setText("Osoba - Osoba");
-        }
-
-        else if (source ==ePolsh)
-        {
+            chBox.setSelected(false);
+            setLocalMetoda(setLocal); //todo sprawdzam setlocale
+            //chBox.setText("Osoba - Osoba");
+        } else if (source == ePolsh) {
             System.out.println("Wybór polskich liter");
             //settings.setText("Ustawienia");
-
-           setPolish();
-        }
-        else if (source ==eEnglish)
-        {
+            setLocal = "pol";
+            setLocalMetoda(setLocal);
+        } else if (source == eEnglish) {
             System.out.println("Wybór angielkisch liter");
-           setEnglish();
-        }
-        else if (source ==eGerman)
-        {
+            setLocal = "eng";
+            setLocalMetoda(setLocal);
+        } else if (source == eGerman) {
             System.out.println("Wybór niemieckich liter");
+            setLocal = "ger";
+            setLocalMetoda(setLocal);
+        }
+    }
+
+    public String setLocalMetoda(String setLocal) {
+        if (setLocal.equals("pol")) {
+            setPolish();
+        } else if (setLocal.equals("eng")) {
+            setEnglish();
+        } else if (setLocal.equals("ger")) {
             setGerman();
         }
+
+        return null;
     }
 
 }

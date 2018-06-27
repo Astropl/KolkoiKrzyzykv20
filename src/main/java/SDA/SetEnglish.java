@@ -21,6 +21,15 @@ public class SetEnglish
         }else {
             PlanszaGlowna.chBox.setText("Person - Person");
         }
+        PlanszaGlowna.eExit.setText("Exit");
+        PlanszaGlowna.eLanguage.setText("language");
+        PlanszaGlowna.ePolsh.setText("Polish");
+        PlanszaGlowna.eEnglish.setText("English");
+        PlanszaGlowna.eGerman.setText("German");
+
+
+
+
     }
     public static String convertToMultiline(String orig) {
         return "<html>" + orig.replaceAll("\n", "<br>");

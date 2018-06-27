@@ -17,6 +17,12 @@ public class SetGerman {
         }else {
             PlanszaGlowna.chBox.setText("Person - Person");
         }
+        PlanszaGlowna.eExit.setText("Ausfahrt");
+        PlanszaGlowna.eLanguage.setText("Sprache");
+        PlanszaGlowna.ePolsh.setText("Polnisch");
+        PlanszaGlowna.eEnglish.setText("English");
+        PlanszaGlowna.eGerman.setText("Deutsch");
+
 
 
     }
