@@ -70,7 +70,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
     ButtonGroup directionGroup1 = new ButtonGroup();
     ButtonGroup directionGroup2 = new ButtonGroup();
 
-
+// jakis coment do gita test
 
     //**********
 
