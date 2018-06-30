@@ -4,8 +4,6 @@ public class SetPolish {
 
 
     public static void setPolish() {
-
-
         PlanszaGlowna.settings.setText("Ustawienia");
         PlanszaGlowna.file.setText("Plik");
         PlanszaGlowna.lbl5.setText(convertToMultiline("Zaznacz żeby grac z komputerem. \nOdznaczone to gra dwóch osób."));
@@ -21,7 +19,6 @@ public class SetPolish {
         PlanszaGlowna.eEnglish.setText("Angielski");
         PlanszaGlowna.eGerman.setText("Niemiecki");
         PlanszaGlowna.eChoiceTypeGame.setText("Wybór trybu");
-
         UstawImiona.message1 = "Player 1 podaj swoje  imie";
         UstawImiona.message2 = "Komputer będzie miał na imię BAJTEK: ";
         UstawImiona.message3 = "Player 2 podaj swoje  imie";
