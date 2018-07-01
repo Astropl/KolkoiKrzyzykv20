@@ -32,6 +32,8 @@ public class KonstruktorTekstów {
         PlanszaGlowna.btnReset.setText("RESET");
         PlanszaGlowna.chBox.setText("Osoba - Osoba");
         PlanszaGlowna.lbl5.setText(convertToMultiline("Zaznacz żeby grac z komputerem. \nOdznaczone to gra dwóch osób."));
+        PlanszaGlowna.lblCzas.setText("1900:01:01 12:04");
+        PlanszaGlowna.lblCzas.setFont(new Font("Arial",Font.BOLD,20));
     }
 
     public static String convertToMultiline(String orig) {

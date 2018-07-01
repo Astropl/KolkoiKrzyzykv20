@@ -31,6 +31,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
     public static JButton btnGraj;
     public static JButton btnReset;
     public static JCheckBox chBox;
+    public static JLabel lblCzas;
 
     public static JMenuBar menuBar;
     public static JMenu menu;
@@ -72,7 +73,10 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
     ButtonGroup directionGroup2 = new ButtonGroup();
 
 
+
     public void planszaGlowna() {
+        Time time = new Time();
+        time.run();
         initUI();
 
 
@@ -144,6 +148,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
         kontener.add(btnReset);
         kontener.add(chBox);
         kontener.add(lbl5);
+        kontener.add(lblCzas);
     }
 
     //**************************
