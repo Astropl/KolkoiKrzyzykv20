@@ -75,8 +75,8 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
 
 
     public void planszaGlowna() {
-        Time time = new Time();
-        time.run();
+//        Time time = new Time();
+//        time.run();
         initUI();
 
 
@@ -91,6 +91,11 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
         sL.setLabels(false);
         btnReset.setEnabled(false);
         lbl4.setVisible(false);
+        //
+        //btn1.setIcon(new ImageIcon(PlanszaGlowna.class.getResource("Resources/x.jpg")));
+        //btn1.setIcon(new ImageIcon(PlanszaGlowna.class.getResource("C:/Users/Astro/IdeaProjects/KolkoiKrzyzykv20/src/main/java/SDA/Resources/x.jpg")));
+
+        //C:\Users\Astro\IdeaProjects\KolkoiKrzyzykv20\src\main\java\SDA\Resources
     }
 
     public PlanszaGlowna() {
@@ -203,8 +208,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
         Object source = e.getSource();
         if (source == btn1) {
             if (ruchOsoba == 0) {
-                btn1.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                        "Resources/x.jpg")));
+                btn1.setIcon(new ImageIcon(PlanszaGlowna.class.getResource("Resources/x.jpg")));
                 System.out.println(lbl1.getText() + " zaznaczył 1x");
                 znacznikBtn1 = "x";
 
