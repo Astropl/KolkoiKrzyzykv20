@@ -5,7 +5,7 @@ import static SDA.RuchKompa.ruchKompa;
 
 public class RuchOsoba extends PlanszaGlowna
 
-{
+ { static String message1 = "Ruch Gracza o imieniu : ";
 
     public static void ruchOsoba() {
         if (!koniec) {
@@ -35,7 +35,7 @@ public class RuchOsoba extends PlanszaGlowna
             }
             if (!koniec) {
                 //lbl4.setText(lbl1.getText());
-                lbl3.setText("Ruch Gracza o imieniu : " + lbl4.getText());
+                lbl3.setText(message1 + lbl4.getText());
             }
         }
     }

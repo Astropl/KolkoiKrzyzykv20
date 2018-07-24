@@ -32,7 +32,6 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
     public static JButton btnReset;
     public static JCheckBox chBox;
     public static JLabel lblCzas;
-
     public static JMenuBar menuBar;
     public static JMenu menu;
     public static JMenuItem jMenuItem;
@@ -57,7 +56,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
     static SetGerman setGerman = new SetGerman();
 
     JMenuBar menubar = new JMenuBar();
-    JRadioButtonMenuItem mOsobaKomp = new JRadioButtonMenuItem("Osoba - Komp");
+    static JRadioButtonMenuItem mOsobaKomp = new JRadioButtonMenuItem("Osoba - Komp");
     static JMenu file = new JMenu("Plik");
     static JMenu settings = new JMenu("Ustawienia");
     ImageIcon exitIcon = new ImageIcon("Resources/exit.png");
@@ -68,15 +67,21 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
     static JRadioButtonMenuItem eEnglish = new JRadioButtonMenuItem("Angielski");
     static JRadioButtonMenuItem eGerman = new JRadioButtonMenuItem("Niemiecki");
     static JMenu eChoiceTypeGame = new JMenu("Wybór trybu");
-    JRadioButtonMenuItem mOsobaOsoba = new JRadioButtonMenuItem("Osoba - Osoba", true);
+    static JRadioButtonMenuItem mOsobaOsoba = new JRadioButtonMenuItem("Osoba - Osoba", true);
     ButtonGroup directionGroup1 = new ButtonGroup();
     ButtonGroup directionGroup2 = new ButtonGroup();
+    NewThread newThread = new NewThread();
+    Time time = new Time();
+    Thread thread = new Thread(newThread);
+    Thread thread1 = new Thread(time);
+    //Thread thread = new Thread(time);
 
 
 
     public void planszaGlowna() {
-//        Time time = new Time();
-//        time.run();
+
+//
+      thread1.start();
         initUI();
 
 
@@ -91,11 +96,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
         sL.setLabels(false);
         btnReset.setEnabled(false);
         lbl4.setVisible(false);
-        //
-        //btn1.setIcon(new ImageIcon(PlanszaGlowna.class.getResource("Resources/x.jpg")));
-        //btn1.setIcon(new ImageIcon(PlanszaGlowna.class.getResource("C:/Users/Astro/IdeaProjects/KolkoiKrzyzykv20/src/main/java/SDA/Resources/x.jpg")));
 
-        //C:\Users\Astro\IdeaProjects\KolkoiKrzyzykv20\src\main\java\SDA\Resources
     }
 
     public PlanszaGlowna() {
@@ -169,7 +170,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
     private void createMenuBar() {
 
 
-        file.setMnemonic(KeyEvent.VK_F);
+        file.setMnemonic(KeyEvent.VK_F); //Skróty klawiszowe
 
 
         eExit.setMnemonic(KeyEvent.VK_E);
@@ -203,7 +204,6 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         System.out.println("Plansza Glowna");
-        NewThread newThread = new NewThread();
         Thread thread = new Thread(newThread);
         Object source = e.getSource();
         if (source == btn1) {
@@ -228,11 +228,13 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
                 znacznikBtn1 = "o";
 
             }
+
             thread.start();
+
 
             btn1.setEnabled(false);
             System.out.println("Nacinall 1");
-
+//thread.destroy();
 
         } else if (source == btn2) {
             if (ruchOsoba == 0) {
@@ -256,10 +258,11 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
                 znacznikBtn2 = "o";
 
             }
+
             thread.start();
 
             btn2.setEnabled(false);
-
+            //thread.destroy();
             System.out.println("Nacoisnl 2");
         } else if (source == btn3) {
 
@@ -283,7 +286,9 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
                 znacznikBtn3 = "o";
 
             }
+
             thread.start();
+
             btn3.setEnabled(false);
             System.out.println("Nacoisnl 3");
         } else if (source == btn4) {
@@ -307,6 +312,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
                 znacznikBtn4 = "o";
 
             }
+
             thread.start();
             btn4.setEnabled(false);
             System.out.println("Nacoisnl 4");
@@ -331,7 +337,9 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
                 znacznikBtn5 = "o";
 
             }
+
             thread.start();
+            //thread.stop();
             btn5.setEnabled(false);
             System.out.println("Nacoisnl 5");
         } else if (source == btn6) {
@@ -355,6 +363,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
                 znacznikBtn6 = "o";
 
             }
+
             thread.start();
             btn6.setEnabled(false);
             System.out.println("Nacoisnl 6");
@@ -379,6 +388,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
                 znacznikBtn7 = "o";
 
             }
+
             thread.start();
             btn7.setEnabled(false);
             System.out.println("Nacoisnl 7");
@@ -403,6 +413,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
                 znacznikBtn8 = "o";
 
             }
+
             thread.start();
             btn8.setEnabled(false);
             System.out.println("/Nacoisnl 8");
@@ -427,6 +438,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
                 znacznikBtn9 = "o";
 
             }
+
             thread.start();
             btn9.setEnabled(false);
             System.out.println("/Nacoisnl 9");
@@ -489,7 +501,7 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
         }
     }
 
-    public String setLocalMetoda(String setLocal) {
+    public static String setLocalMetoda(String setLocal) {
         if (setLocal.equals("pol")) {
             setPolish();
         } else if (setLocal.equals("eng")) {

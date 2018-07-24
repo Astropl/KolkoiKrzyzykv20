@@ -20,7 +20,20 @@ public class SetEnglish {
         UstawImiona.message1 = "Player 1 give your name";
         UstawImiona.message2 = "The computer will be called BAJTEK: ";
         UstawImiona.message3 = "Player 2 give your name";
+        TheWin.message1="WIN A PLAYER ABOUT NAME: ";
+        TheWin.message2="Hurray won: ";
+        CountRuch.message1="Unfortunately, but we have a DRAW !!! ";
+        RuchOsoba.message1="Player's movement by name : ";
         StartGame.message = "Now we'll begin\n";
+        //PlanszaGlowna.lbl1.setText("imie 1");
+        PlanszaGlowna.lbl11.setText("Player no 1");
+
+        //PlanszaGlowna.lbl2.setText("imie 2");
+        PlanszaGlowna.lbl12.setText("Player no 2");
+
+        PlanszaGlowna.mOsobaKomp.setText("Person - Comp");
+        PlanszaGlowna.mOsobaOsoba.setText("Person - Person");
+        PlanszaGlowna.lbl3.setText("Begins a player named :" + PlanszaGlowna.lbl1.getText());
 
 
     }

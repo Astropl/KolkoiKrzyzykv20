@@ -32,7 +32,7 @@ public class KonstruktorRozmiarButtonow {
         PlanszaGlowna.lbl5.setBounds(350, 200, 120, 180);
 
 
-        PlanszaGlowna.lblCzas.setBounds(120,20,180,30);
+        PlanszaGlowna.lblCzas.setBounds(120,20,220,30);
 
     }
 }

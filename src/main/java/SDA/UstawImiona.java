@@ -16,6 +16,7 @@ public class UstawImiona {
     static String message3 = "Player 2 podaj swoje  imie";
 
 
+
     public static void ustawImiona() {
         System.out.println("Ustaw imiona");
 
@@ -38,6 +39,7 @@ public class UstawImiona {
             imie2 = JOptionPane.showInputDialog(message3);
         }
         PlanszaGlowna.lbl2.setText(imie2);
+
         PlanszaGlowna.lbl3.setText("Rozpoczyna Gracz o imeniu :" + PlanszaGlowna.lbl1.getText());
         PlanszaGlowna.lbl4.setText(PlanszaGlowna.lbl1.getText());
         StartGame.startGame();

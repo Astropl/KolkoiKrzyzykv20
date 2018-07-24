@@ -1,5 +1,7 @@
 package SDA;
 
+import java.io.IOException;
+
 import static SDA.CountRuch.countRuch;
 import static SDA.PlanszaGlowna.lbl3;
 import static SDA.PlanszaGlowna.lbl4;
@@ -9,9 +11,23 @@ public class NewThread implements Runnable {
 
     @Override
     public void run() {
+        try {
+            System.out.println("nowy watek");
+            countRuch();
+            ruchOsoba();
+            //interrupt();
 
-        System.out.println("nowy watek");
-        countRuch();
-        ruchOsoba();
+        }catch (Exception e)
+        {
+            e.printStackTrace();
+        }finally {
+            System.out.println("poszło dalej");
+        }
     }
+
+
+
+//    private static void interrupt() {
+//        Thread.currentThread().stop();
+//    }
 }

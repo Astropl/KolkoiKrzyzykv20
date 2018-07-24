@@ -3,11 +3,14 @@ package SDA;
 import javax.swing.*;
 
 public class ResetSettings extends PlanszaGlowna {
-    public static void resetSettings() {
-        NewThread newThread = new NewThread();
-        Thread thread = new Thread(newThread);
-        thread.stop();
+    public  static void resetSettings() {
+//        NewThread newThread = new NewThread();
+//        Thread thread = new Thread(newThread);
+//        thread.stop();
         System.out.println("Resetuje butony");
+        setLocal="pol";
+        setLocalMetoda(setLocal);
+        ePolsh.setSelected(true);
         btnReset.setEnabled(false);
         KonstruktorTekstów.konstruktorTekstow();
         ButtonsDisabledOnFirst.buttonsDisabledOnFirst(false);
