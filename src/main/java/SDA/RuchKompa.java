@@ -1,11 +1,13 @@
 package SDA;
 
+import SDA.init.MainBoard;
+
 import javax.swing.*;
 import java.util.Random;
 
 import static SDA.Checkresult.checkResult;
 
-public class RuchKompa extends PlanszaGlowna {
+public class RuchKompa extends MainBoard {
 
 
     public static int losuj;
@@ -72,8 +74,8 @@ public class RuchKompa extends PlanszaGlowna {
                     btnFalse();
                 } else if (btn1.isEnabled() == true) {
                     btnTrue();
-                    btn1.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                            "Resources/o.jpg"
+                    btn1.setIcon(new ImageIcon(MainBoard.class.getResource(
+                            "../Resources/o.jpg"
                     )));
                     znacznikBtn1 = "o";
                     btn1.setEnabled(false);
@@ -85,8 +87,8 @@ public class RuchKompa extends PlanszaGlowna {
                     btnFalse();
                 } else if (btn2.isEnabled() == true) {
                     btnTrue();
-                    btn2.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                            "Resources/o.jpg"
+                    btn2.setIcon(new ImageIcon(MainBoard.class.getResource(
+                            "../Resources/o.jpg"
                     )));
                     znacznikBtn2 = "o";
                     btn2.setEnabled(false);
@@ -98,8 +100,8 @@ public class RuchKompa extends PlanszaGlowna {
                     btnFalse();
                 } else if (btn3.isEnabled() == true) {
                     btnTrue();
-                    btn3.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                            "Resources/o.jpg"
+                    btn3.setIcon(new ImageIcon(MainBoard.class.getResource(
+                            "../Resources/o.jpg"
                     )));
                     znacznikBtn3 = "o";
                     btn3.setEnabled(false);
@@ -112,8 +114,8 @@ public class RuchKompa extends PlanszaGlowna {
                     btnFalse();
                 } else if (btn4.isEnabled() == true) {
                     btnTrue();
-                    btn4.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                            "Resources/o.jpg"
+                    btn4.setIcon(new ImageIcon(MainBoard.class.getResource(
+                            "../Resources/o.jpg"
                     )));
                     znacznikBtn4 = "o";
                     btn4.setEnabled(false);
@@ -126,8 +128,8 @@ public class RuchKompa extends PlanszaGlowna {
                     btnFalse();
                 } else if (btn5.isEnabled() == true) {
                     btnTrue();
-                    btn5.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                            "Resources/o.jpg"
+                    btn5.setIcon(new ImageIcon(MainBoard.class.getResource(
+                            "../Resources/o.jpg"
                     )));
                     znacznikBtn5 = "o";
                     btn5.setEnabled(false);
@@ -140,8 +142,8 @@ public class RuchKompa extends PlanszaGlowna {
                     btnFalse();
                 } else if (btn6.isEnabled() == true) {
                     btnTrue();
-                    btn6.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                            "Resources/o.jpg"
+                    btn6.setIcon(new ImageIcon(MainBoard.class.getResource(
+                            "../Resources/o.jpg"
                     )));
                     znacznikBtn6 = "o";
                     btn6.setEnabled(false);
@@ -154,8 +156,8 @@ public class RuchKompa extends PlanszaGlowna {
                     btnFalse();
                 } else if (btn7.isEnabled() == true) {
                     btnTrue();
-                    btn7.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                            "Resources/o.jpg"
+                    btn7.setIcon(new ImageIcon(MainBoard.class.getResource(
+                            "../Resources/o.jpg"
                     )));
                     znacznikBtn7 = "o";
                     btn7.setEnabled(false);
@@ -168,8 +170,8 @@ public class RuchKompa extends PlanszaGlowna {
                     btnFalse();
                 } else if (btn8.isEnabled() == true) {
                     btnTrue();
-                    btn8.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                            "Resources/o.jpg"
+                    btn8.setIcon(new ImageIcon(MainBoard.class.getResource(
+                            "../Resources/o.jpg"
                     )));
                     znacznikBtn8 = "o";
                     btn8.setEnabled(false);
@@ -182,8 +184,8 @@ public class RuchKompa extends PlanszaGlowna {
                     btnFalse();
                 } else if (btn9.isEnabled() == true) {
                     btnTrue();
-                    btn9.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                            "Resources/o.jpg"
+                    btn9.setIcon(new ImageIcon(MainBoard.class.getResource(
+                            "../Resources/o.jpg"
                     )));
                     znacznikBtn9 = "o";
                     btn9.setEnabled(false);

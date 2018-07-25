@@ -1,4 +1,11 @@
-package SDA;
+package SDA.init;
+
+import SDA.*;
+import SDA.Language.SetEnglish;
+import SDA.Language.SetGerman;
+import SDA.Language.SetLabels;
+import SDA.thread.NewThread;
+import SDA.thread.Time;
 
 import javax.swing.*;
 import java.awt.*;
@@ -6,12 +13,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
-import static SDA.SetEnglish.setEnglish;
-import static SDA.SetGerman.setGerman;
+import static SDA.Language.SetEnglish.setEnglish;
+import static SDA.Language.SetGerman.setGerman;
 import static SDA.SetPolish.setPolish;
 
 
-public class PlanszaGlowna extends JFrame implements ActionListener {
+public class MainBoard extends JFrame implements ActionListener {
     public static JButton btn1;
     public static JButton btn2;
     public static JButton btn3;
@@ -37,51 +44,68 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
     public static JMenuItem jMenuItem;
 
 
-    static int ruchOsoba = 0; // 0 osoba numer 1, 1 osoba numer 2, 2  komputer BAJTEK
-    static String znacznikBtn1 = "1", znacznikBtn2 = "2", znacznikBtn3 = "3";
-    static String znacznikBtn4 = "4", znacznikBtn5 = "5", znacznikBtn6 = "6";
-    static String znacznikBtn7 = "7", znacznikBtn8 = "8", znacznikBtn9 = "9";
-
+    public static int ruchOsoba = 0; // 0 osoba numer 1, 1 osoba numer 2, 2  komputer BAJTEK
+    public static String znacznikBtn1 = "1", znacznikBtn2 = "2", znacznikBtn3 = "3";
+    public static String znacznikBtn4 = "4", znacznikBtn5 = "5", znacznikBtn6 = "6";
+    public static String znacznikBtn7 = "7", znacznikBtn8 = "8", znacznikBtn9 = "9";
+    public static boolean koniec = false;
+    public static int countRuch = 0;
+    public static String setLocal = "pol";
+    public static SetPolish setPolish = new SetPolish();
+    public static SetEnglish setEnglish = new SetEnglish();
+    public static SetGerman setGerman = new SetGerman();
+    public static JRadioButtonMenuItem mOsobaKomp = new JRadioButtonMenuItem("Osoba - Komp");
+    public static JMenu file = new JMenu("Plik");
+    public static JMenu settings = new JMenu("Ustawienia");
+    public static JMenuItem eExit = new JMenuItem("Wyjscie");
+    public static JMenu eLanguage = new JMenu("Język");
+    public static JRadioButtonMenuItem ePolsh = new JRadioButtonMenuItem("Polski", true);
+    public static JRadioButtonMenuItem eEnglish = new JRadioButtonMenuItem("Angielski");
+    public static JRadioButtonMenuItem eGerman = new JRadioButtonMenuItem("Niemiecki");
+    public static JMenu eChoiceTypeGame = new JMenu("Wybór trybu");
+    public static JRadioButtonMenuItem mOsobaOsoba = new JRadioButtonMenuItem("Osoba - Osoba", true);
     boolean bol = false;
-    static boolean koniec = false;
-    static int countRuch = 0;
     ButtonsDisabledOnFirst btdof = new ButtonsDisabledOnFirst();
     KonstruktorButtonow kb = new KonstruktorButtonow();
     KonstruktorRozmiarButtonow krb = new KonstruktorRozmiarButtonow();
     KonstruktorTekstów kt = new KonstruktorTekstów();
     SetLabels sL = new SetLabels();
-    static String setLocal = "pol";
-    static SetPolish setPolish = new SetPolish();
-    static SetEnglish setEnglish = new SetEnglish();
-    static SetGerman setGerman = new SetGerman();
-
     JMenuBar menubar = new JMenuBar();
-    static JRadioButtonMenuItem mOsobaKomp = new JRadioButtonMenuItem("Osoba - Komp");
-    static JMenu file = new JMenu("Plik");
-    static JMenu settings = new JMenu("Ustawienia");
     ImageIcon exitIcon = new ImageIcon("Resources/exit.png");
-    static JMenuItem eExit = new JMenuItem("Wyjscie");
-
-    static JMenu eLanguage = new JMenu("Język");
-    static JRadioButtonMenuItem ePolsh = new JRadioButtonMenuItem("Polski", true);
-    static JRadioButtonMenuItem eEnglish = new JRadioButtonMenuItem("Angielski");
-    static JRadioButtonMenuItem eGerman = new JRadioButtonMenuItem("Niemiecki");
-    static JMenu eChoiceTypeGame = new JMenu("Wybór trybu");
-    static JRadioButtonMenuItem mOsobaOsoba = new JRadioButtonMenuItem("Osoba - Osoba", true);
     ButtonGroup directionGroup1 = new ButtonGroup();
     ButtonGroup directionGroup2 = new ButtonGroup();
     NewThread newThread = new NewThread();
     Time time = new Time();
     Thread thread = new Thread(newThread);
     Thread thread1 = new Thread(time);
-    //Thread thread = new Thread(time);
 
 
+    public MainBoard() {
+        this.bol = bol;
+        this.setLayout(null);
+        this.setSize(500, 600);
+        this.setTitle(" Kółko i Krzyżyk");
+        this.setResizable(false);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setVisible(true);
+    }
 
-    public void planszaGlowna() {
+    public static String setLocalMetoda(String setLocal) {
+        if (setLocal.equals("pol")) {
+            setPolish();
+        } else if (setLocal.equals("eng")) {
+            setEnglish();
+        } else if (setLocal.equals("ger")) {
+            setGerman();
+        }
 
-//
-      thread1.start();
+        return null;
+    }
+
+    public void mainBoard() {
+
+
+        thread1.start();
         initUI();
 
 
@@ -98,17 +122,6 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
         lbl4.setVisible(false);
 
     }
-
-    public PlanszaGlowna() {
-        this.bol = bol;
-        this.setLayout(null);
-        this.setSize(500, 600);
-        this.setTitle(" Kółko i Krzyżyk");
-        this.setResizable(false);
-        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        setVisible(true);
-    }
-
 
     public void addActiony() {
         btnGraj.addActionListener(this);
@@ -131,7 +144,6 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
 
 
     }
-
 
     public void konstruktorAddKontenerow() {
         Container kontener = this.getContentPane();
@@ -208,21 +220,21 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
         Object source = e.getSource();
         if (source == btn1) {
             if (ruchOsoba == 0) {
-                btn1.setIcon(new ImageIcon(PlanszaGlowna.class.getResource("Resources/x.jpg")));
+                btn1.setIcon(new ImageIcon(MainBoard.class.getResource("../Resources/x.jpg")));
                 System.out.println(lbl1.getText() + " zaznaczył 1x");
                 znacznikBtn1 = "x";
 
             } else if (ruchOsoba == 1) {
-                btn1.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                        "Resources/o.jpg"
+                btn1.setIcon(new ImageIcon(MainBoard.class.getResource(
+                        "../Resources/o.jpg"
                 )));
                 System.out.println(lbl2.getText() + " zaznaczył 1o");
                 znacznikBtn1 = "o";
 
             } else if (ruchOsoba == 2) {
                 System.out.println("Ruch kompa");
-                btn1.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                        "Resources/o.jpg"
+                btn1.setIcon(new ImageIcon(MainBoard.class.getResource(
+                        "../Resources/o.jpg"
                 )));
                 System.out.println(lbl2.getText() + " zaznaczył 1o");
                 znacznikBtn1 = "o";
@@ -238,22 +250,22 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
 
         } else if (source == btn2) {
             if (ruchOsoba == 0) {
-                btn2.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                        "Resources/x.jpg"
+                btn2.setIcon(new ImageIcon(MainBoard.class.getResource(
+                        "../Resources/x.jpg"
                 )));
                 znacznikBtn2 = "x";
 
             } else if (ruchOsoba == 1) {
-                btn2.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                        "Resources/o.jpg"
+                btn2.setIcon(new ImageIcon(MainBoard.class.getResource(
+                        "../Resources/o.jpg"
                 )));
                 znacznikBtn2 = "o";
 
             } else if (ruchOsoba == 2) {
 
                 System.out.println("Ruch kompa");
-                btn2.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                        "Resources/o.jpg"
+                btn2.setIcon(new ImageIcon(MainBoard.class.getResource(
+                        "../Resources/o.jpg"
                 )));
                 znacznikBtn2 = "o";
 
@@ -267,21 +279,21 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
         } else if (source == btn3) {
 
             if (ruchOsoba == 0) {
-                btn3.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                        "Resources/x.jpg"
+                btn3.setIcon(new ImageIcon(MainBoard.class.getResource(
+                        "../Resources/x.jpg"
                 )));
                 znacznikBtn3 = "x";
 
             } else if (ruchOsoba == 1) {
-                btn3.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                        "Resources/o.jpg"
+                btn3.setIcon(new ImageIcon(MainBoard.class.getResource(
+                        "../Resources/o.jpg"
                 )));
                 znacznikBtn3 = "o";
 
             } else if (ruchOsoba == 2) {
                 System.out.println("Ruch kompa");
-                btn3.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                        "Resources/o.jpg"
+                btn3.setIcon(new ImageIcon(MainBoard.class.getResource(
+                        "../Resources/o.jpg"
                 )));
                 znacznikBtn3 = "o";
 
@@ -293,21 +305,21 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
             System.out.println("Nacoisnl 3");
         } else if (source == btn4) {
             if (ruchOsoba == 0) {
-                btn4.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                        "Resources/x.jpg"
+                btn4.setIcon(new ImageIcon(MainBoard.class.getResource(
+                        "../Resources/x.jpg"
                 )));
                 znacznikBtn4 = "x";
 
             } else if (ruchOsoba == 1) {
-                btn4.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                        "Resources/o.jpg"
+                btn4.setIcon(new ImageIcon(MainBoard.class.getResource(
+                        "../Resources/o.jpg"
                 )));
                 znacznikBtn4 = "o";
 
             } else if (ruchOsoba == 2) {
                 System.out.println("Ruch kompa");
-                btn4.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                        "Resources/o.jpg"
+                btn4.setIcon(new ImageIcon(MainBoard.class.getResource(
+                        "../Resources/o.jpg"
                 )));
                 znacznikBtn4 = "o";
 
@@ -318,21 +330,21 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
             System.out.println("Nacoisnl 4");
         } else if (source == btn5) {
             if (ruchOsoba == 0) {
-                btn5.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                        "Resources/x.jpg"
+                btn5.setIcon(new ImageIcon(MainBoard.class.getResource(
+                        "../Resources/x.jpg"
                 )));
                 znacznikBtn5 = "x";
 
             } else if (ruchOsoba == 1) {
-                btn5.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                        "Resources/o.jpg"
+                btn5.setIcon(new ImageIcon(MainBoard.class.getResource(
+                        "../Resources/o.jpg"
                 )));
                 znacznikBtn5 = "o";
 
             } else if (ruchOsoba == 2) {
                 System.out.println("Ruch kompa");
-                btn5.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                        "Resources/o.jpg"
+                btn5.setIcon(new ImageIcon(MainBoard.class.getResource(
+                        "../Resources/o.jpg"
                 )));
                 znacznikBtn5 = "o";
 
@@ -344,21 +356,21 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
             System.out.println("Nacoisnl 5");
         } else if (source == btn6) {
             if (ruchOsoba == 0) {
-                btn6.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                        "Resources/x.jpg"
+                btn6.setIcon(new ImageIcon(MainBoard.class.getResource(
+                        "../Resources/x.jpg"
                 )));
                 znacznikBtn6 = "x";
 
             } else if (ruchOsoba == 1) {
-                btn6.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                        "Resources/o.jpg"
+                btn6.setIcon(new ImageIcon(MainBoard.class.getResource(
+                        "../Resources/o.jpg"
                 )));
                 znacznikBtn6 = "o";
 
             } else if (ruchOsoba == 2) {
                 System.out.println("Ruch kompa");
-                btn6.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                        "Resources/o.jpg"
+                btn6.setIcon(new ImageIcon(MainBoard.class.getResource(
+                        "../Resources/o.jpg"
                 )));
                 znacznikBtn6 = "o";
 
@@ -369,21 +381,21 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
             System.out.println("Nacoisnl 6");
         } else if (source == btn7) {
             if (ruchOsoba == 0) {
-                btn7.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                        "Resources/x.jpg"
+                btn7.setIcon(new ImageIcon(MainBoard.class.getResource(
+                        "../Resources/x.jpg"
                 )));
                 znacznikBtn7 = "x";
 
             } else if (ruchOsoba == 1) {
-                btn7.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                        "Resources/o.jpg"
+                btn7.setIcon(new ImageIcon(MainBoard.class.getResource(
+                        "../Resources/o.jpg"
                 )));
                 znacznikBtn7 = "o";
 
             } else if (ruchOsoba == 2) {
                 System.out.println("Ruch kompa");
-                btn7.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                        "Resources/o.jpg"
+                btn7.setIcon(new ImageIcon(MainBoard.class.getResource(
+                        "../Resources/o.jpg"
                 )));
                 znacznikBtn7 = "o";
 
@@ -394,21 +406,21 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
             System.out.println("Nacoisnl 7");
         } else if (source == btn8) {
             if (ruchOsoba == 0) {
-                btn8.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                        "Resources/x.jpg"
+                btn8.setIcon(new ImageIcon(MainBoard.class.getResource(
+                        "../Resources/x.jpg"
                 )));
                 znacznikBtn8 = "x";
 
             } else if (ruchOsoba == 1) {
-                btn8.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                        "Resources/o.jpg"
+                btn8.setIcon(new ImageIcon(MainBoard.class.getResource(
+                        "../Resources/o.jpg"
                 )));
                 znacznikBtn8 = "o";
 
             } else if (ruchOsoba == 2) {
                 System.out.println("Ruch kompa");
-                btn8.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                        "Resources/o.jpg"
+                btn8.setIcon(new ImageIcon(MainBoard.class.getResource(
+                        "../Resources/o.jpg"
                 )));
                 znacznikBtn8 = "o";
 
@@ -419,21 +431,21 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
             System.out.println("/Nacoisnl 8");
         } else if (source == btn9) {
             if (ruchOsoba == 0) {
-                btn9.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                        "Resources/x.jpg"
+                btn9.setIcon(new ImageIcon(MainBoard.class.getResource(
+                        "../Resources/x.jpg"
                 )));
                 znacznikBtn9 = "x";
 
             } else if (ruchOsoba == 1) {
-                btn9.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                        "Resources/o.jpg"
+                btn9.setIcon(new ImageIcon(MainBoard.class.getResource(
+                        "../Resources/o.jpg"
                 )));
                 znacznikBtn9 = "o";
 
             } else if (ruchOsoba == 2) {
                 System.out.println("Ruch kompa");
-                btn9.setIcon(new ImageIcon(PlanszaGlowna.class.getResource(
-                        "Resources/o.jpg"
+                btn9.setIcon(new ImageIcon(MainBoard.class.getResource(
+                        "../Resources/o.jpg"
                 )));
                 znacznikBtn9 = "o";
 
@@ -499,18 +511,6 @@ public class PlanszaGlowna extends JFrame implements ActionListener {
             setLocal = "ger";
             setLocalMetoda(setLocal);
         }
-    }
-
-    public static String setLocalMetoda(String setLocal) {
-        if (setLocal.equals("pol")) {
-            setPolish();
-        } else if (setLocal.equals("eng")) {
-            setEnglish();
-        } else if (setLocal.equals("ger")) {
-            setGerman();
-        }
-
-        return null;
     }
 
 }

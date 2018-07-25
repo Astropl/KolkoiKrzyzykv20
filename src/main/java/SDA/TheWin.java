@@ -1,12 +1,14 @@
 package SDA;
 
+import SDA.init.MainBoard;
+
 import javax.swing.*;
 
-public class TheWin extends PlanszaGlowna
+public class TheWin extends MainBoard
 
 {
-    static String message1 = "WYGRANA  GRACZA O IMIENIU: ";
-    static String message2 = "Hura wygrał: ";
+    public static String message1 = "WYGRANA  GRACZA O IMIENIU: ";
+    public static String message2 = "Hura wygrał: ";
 
     public static void theWin() {
 

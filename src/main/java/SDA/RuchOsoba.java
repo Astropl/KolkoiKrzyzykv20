@@ -1,11 +1,13 @@
 package SDA;
 
+import SDA.init.MainBoard;
+
 import static SDA.Checkresult.checkResult;
 import static SDA.RuchKompa.ruchKompa;
 
-public class RuchOsoba extends PlanszaGlowna
+public class RuchOsoba extends MainBoard
 
- { static String message1 = "Ruch Gracza o imieniu : ";
+ { public static String message1 = "Ruch Gracza o imieniu : ";
 
     public static void ruchOsoba() {
         if (!koniec) {

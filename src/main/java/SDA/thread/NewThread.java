@@ -1,10 +1,6 @@
-package SDA;
-
-import java.io.IOException;
+package SDA.thread;
 
 import static SDA.CountRuch.countRuch;
-import static SDA.PlanszaGlowna.lbl3;
-import static SDA.PlanszaGlowna.lbl4;
 import static SDA.RuchOsoba.ruchOsoba;
 
 public class NewThread implements Runnable {

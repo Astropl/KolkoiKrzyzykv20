@@ -1,5 +1,7 @@
 package SDA;
 
+import SDA.init.MainBoard;
+
 /**
  * Hello world!
  *
@@ -10,7 +12,7 @@ public class App
 
     {
 
-        PlanszaGlowna planszaGlowna = new PlanszaGlowna();
-        planszaGlowna.planszaGlowna();
+        MainBoard mainBoard = new MainBoard();
+        mainBoard.mainBoard();
     }
 }

@@ -1,5 +1,7 @@
 package SDA;
 
+import SDA.init.MainBoard;
+
 import java.awt.*;
 
 
@@ -7,33 +9,33 @@ public class KonstruktorTekstów {
 
     public static void konstruktorTekstow() {
 
-        PlanszaGlowna.btn1.setText("");
-        PlanszaGlowna.btn2.setText("");
-        PlanszaGlowna.btn3.setText("");
-        PlanszaGlowna.btn4.setText("");
-        PlanszaGlowna.btn5.setText("");
-        PlanszaGlowna.btn6.setText("");
-        PlanszaGlowna.btn7.setText("");
-        PlanszaGlowna.btn8.setText("");
-        PlanszaGlowna.btn9.setText("");
-        PlanszaGlowna.btnGraj.setText("START");
+        MainBoard.btn1.setText("");
+        MainBoard.btn2.setText("");
+        MainBoard.btn3.setText("");
+        MainBoard.btn4.setText("");
+        MainBoard.btn5.setText("");
+        MainBoard.btn6.setText("");
+        MainBoard.btn7.setText("");
+        MainBoard.btn8.setText("");
+        MainBoard.btn9.setText("");
+        MainBoard.btnGraj.setText("START");
 
-        PlanszaGlowna.lbl1.setText("imie 1");
-        PlanszaGlowna.lbl11.setText("GRACZ nr 1");
+        MainBoard.lbl1.setText("imie 1");
+        MainBoard.lbl11.setText("GRACZ nr 1");
 
-        PlanszaGlowna.lbl2.setText("imie 2");
-        PlanszaGlowna.lbl12.setText("GRACZ nr 2");
+        MainBoard.lbl2.setText("imie 2");
+        MainBoard.lbl12.setText("GRACZ nr 2");
 
-        PlanszaGlowna.lbl1.setFont(new Font("Arial", Font.BOLD, 15));
-        PlanszaGlowna.lbl2.setFont(new Font("Arial", Font.BOLD, 15));
-        PlanszaGlowna.lbl3.setFont(new Font("Arial", Font.BOLD, 20));
+        MainBoard.lbl1.setFont(new Font("Arial", Font.BOLD, 15));
+        MainBoard.lbl2.setFont(new Font("Arial", Font.BOLD, 15));
+        MainBoard.lbl3.setFont(new Font("Arial", Font.BOLD, 20));
 
-        PlanszaGlowna.lbl4.setText("Current Name");
-        PlanszaGlowna.btnReset.setText("RESET");
-        PlanszaGlowna.chBox.setText("Osoba - Osoba");
-        PlanszaGlowna.lbl5.setText(convertToMultiline("Zaznacz żeby grac z komputerem. \nOdznaczone to gra dwóch osób."));
-        PlanszaGlowna.lblCzas.setText("1900:01:01 12:04");
-        PlanszaGlowna.lblCzas.setFont(new Font("Arial",Font.BOLD,20));
+        MainBoard.lbl4.setText("Current Name");
+        MainBoard.btnReset.setText("RESET");
+        MainBoard.chBox.setText("Osoba - Osoba");
+        MainBoard.lbl5.setText(convertToMultiline("Zaznacz żeby grac z komputerem. \nOdznaczone to gra dwóch osób."));
+        MainBoard.lblCzas.setText("1900:01:01 12:04");
+        MainBoard.lblCzas.setFont(new Font("Arial",Font.BOLD,20));
     }
 
     public static String convertToMultiline(String orig) {

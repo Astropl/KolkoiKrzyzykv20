@@ -1,8 +1,10 @@
 package SDA;
 
+import SDA.init.MainBoard;
+
 import static SDA.TheWin.theWin;
 
-public class Checkresult extends PlanszaGlowna {
+public class Checkresult extends MainBoard {
 
     public static void checkResult() {
         if (!koniec) {

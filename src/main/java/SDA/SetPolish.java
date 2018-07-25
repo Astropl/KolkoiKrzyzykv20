@@ -1,24 +1,26 @@
 package SDA;
 
+import SDA.init.MainBoard;
+
 public class SetPolish {
 
 
     public static void setPolish() {
-        PlanszaGlowna.settings.setText("Ustawienia");
-        PlanszaGlowna.file.setText("Plik");
-        PlanszaGlowna.lbl5.setText(convertToMultiline("Zaznacz żeby grac z komputerem. \nOdznaczone to gra dwóch osób."));
-        if (PlanszaGlowna.chBox.isSelected() == true) {
-            PlanszaGlowna.chBox.setText("Osoba - Komputer");
+        MainBoard.settings.setText("Ustawienia");
+        MainBoard.file.setText("Plik");
+        MainBoard.lbl5.setText(convertToMultiline("Zaznacz żeby grac z komputerem. \nOdznaczone to gra dwóch osób."));
+        if (MainBoard.chBox.isSelected() == true) {
+            MainBoard.chBox.setText("Osoba - Komputer");
         } else {
 
-            PlanszaGlowna.chBox.setText("Osoba - Osoba");
+            MainBoard.chBox.setText("Osoba - Osoba");
         }
-        PlanszaGlowna.eExit.setText("Wyjście");
-        PlanszaGlowna.eLanguage.setText("Język");
-        PlanszaGlowna.ePolsh.setText("Polski");
-        PlanszaGlowna.eEnglish.setText("Angielski");
-        PlanszaGlowna.eGerman.setText("Niemiecki");
-        PlanszaGlowna.eChoiceTypeGame.setText("Wybór trybu");
+        MainBoard.eExit.setText("Wyjście");
+        MainBoard.eLanguage.setText("Język");
+        MainBoard.ePolsh.setText("Polski");
+        MainBoard.eEnglish.setText("Angielski");
+        MainBoard.eGerman.setText("Niemiecki");
+        MainBoard.eChoiceTypeGame.setText("Wybór trybu");
 
 
         UstawImiona.message1 = "Player 1 podaj swoje  imie";
@@ -32,15 +34,15 @@ public class SetPolish {
 
         StartGame.message = "No to zaczynamy";
 
-        //PlanszaGlowna.lbl1.setText("imie 1");
-        PlanszaGlowna.lbl11.setText("GRACZ nr 1");
+        //MainBoard.lbl1.setText("imie 1");
+        MainBoard.lbl11.setText("GRACZ nr 1");
 
-        //PlanszaGlowna.lbl2.setText("imie 2");
-        PlanszaGlowna.lbl12.setText("GRACZ nr 2");
+        //MainBoard.lbl2.setText("imie 2");
+        MainBoard.lbl12.setText("GRACZ nr 2");
 
-        PlanszaGlowna.mOsobaKomp.setText("Osoba - Komp");
-        PlanszaGlowna.mOsobaOsoba.setText("Osoba - Osoba");
-        PlanszaGlowna.lbl3.setText("Rozpoczyna Gracz o imeniu :" + PlanszaGlowna.lbl1.getText());
+        MainBoard.mOsobaKomp.setText("Osoba - Komp");
+        MainBoard.mOsobaOsoba.setText("Osoba - Osoba");
+        MainBoard.lbl3.setText("Rozpoczyna Gracz o imeniu :" + MainBoard.lbl1.getText());
 
     }
 

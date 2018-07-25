@@ -1,11 +1,12 @@
-package SDA;
+package SDA.thread;
+
+import SDA.init.MainBoard;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Time  implements Runnable {
@@ -29,7 +30,7 @@ public class Time  implements Runnable {
                 Date date = new Date();
 
                 //LblDate.setText(dateFormat.format(date));
-                PlanszaGlowna.lblCzas.setText(timeFormat.format(date)+" "+ dateFormat.format(date));
+                MainBoard.lblCzas.setText(timeFormat.format(date)+" "+ dateFormat.format(date));
             }
         };
         Timer timer = new Timer(1000, timerListener);

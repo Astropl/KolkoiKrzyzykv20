@@ -1,14 +1,16 @@
 package SDA;
 
+import SDA.init.MainBoard;
+
 import javax.swing.*;
 
-import static SDA.SetEnglish.setEnglish;
-import static SDA.SetGerman.setGerman;
+import static SDA.Language.SetEnglish.setEnglish;
+import static SDA.Language.SetGerman.setGerman;
 import static SDA.SetPolish.setPolish;
 
-public class StartGame extends PlanszaGlowna
+public class StartGame extends MainBoard
 {
-    static String message = "No to zaczynamy";
+    public static String message = "No to zaczynamy";
     public static void startGame ()
     {
         if (setLocal.equals("pol"))

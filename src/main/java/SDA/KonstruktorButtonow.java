@@ -1,32 +1,34 @@
 package SDA;
 
+import SDA.init.MainBoard;
+
 import javax.swing.*;
 
 public class KonstruktorButtonow
 {
     public static void kontruktorButonow()
     {
-        PlanszaGlowna.btn1 = new JButton();
-        PlanszaGlowna.btn2 = new JButton();
-        PlanszaGlowna.btn3 = new JButton();
-        PlanszaGlowna.btn4 = new JButton();
-        PlanszaGlowna.btn5 = new JButton();
-        PlanszaGlowna.btn6 = new JButton();
-        PlanszaGlowna.btn7 = new JButton();
-        PlanszaGlowna.btn8 = new JButton();
-        PlanszaGlowna.btn9 = new JButton();
-        PlanszaGlowna.btnGraj = new JButton();
+        MainBoard.btn1 = new JButton();
+        MainBoard.btn2 = new JButton();
+        MainBoard.btn3 = new JButton();
+        MainBoard.btn4 = new JButton();
+        MainBoard.btn5 = new JButton();
+        MainBoard.btn6 = new JButton();
+        MainBoard.btn7 = new JButton();
+        MainBoard.btn8 = new JButton();
+        MainBoard.btn9 = new JButton();
+        MainBoard.btnGraj = new JButton();
 
-        PlanszaGlowna.lbl1 = new JLabel();
-        PlanszaGlowna.lbl11 = new JLabel();
-        PlanszaGlowna.lbl2 = new JLabel();
-        PlanszaGlowna.lbl12 = new JLabel();
-        PlanszaGlowna.lbl3 = new JLabel();
-        PlanszaGlowna.lbl4 = new JLabel();
-        PlanszaGlowna.btnReset = new JButton();
-        PlanszaGlowna.chBox = new JCheckBox();
-        PlanszaGlowna.lbl5 = new JLabel();
-        PlanszaGlowna.lblCzas = new JLabel();
+        MainBoard.lbl1 = new JLabel();
+        MainBoard.lbl11 = new JLabel();
+        MainBoard.lbl2 = new JLabel();
+        MainBoard.lbl12 = new JLabel();
+        MainBoard.lbl3 = new JLabel();
+        MainBoard.lbl4 = new JLabel();
+        MainBoard.btnReset = new JButton();
+        MainBoard.chBox = new JCheckBox();
+        MainBoard.lbl5 = new JLabel();
+        MainBoard.lblCzas = new JLabel();
 
 
     }
