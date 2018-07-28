@@ -1,4 +1,4 @@
-package SDA;
+package SDA.move;
 
 import SDA.init.MainBoard;
 
@@ -10,17 +10,16 @@ public class CountRuch extends MainBoard {
     public static void countRuch() {
 
         if (!koniec) {
-            System.out.println("Coubt ruch");
-//            NewThread newThread = new NewThread();
-//            Thread thread = new Thread(newThread);
+            System.out.println("Count ruch");
+
             countRuch++;
             System.out.println("ruch numer " + countRuch);
-            if (countRuch == 9) {
+            if ((countRuch == 9)&&(koniec==true)) {
                 System.out.println("Koniec bo ruch 9");
                 MainBoard.lbl3.setText(message1);
                 JOptionPane.showMessageDialog(null, message1);
-                koniec=true;
-//                thread.stop();
+                koniec = true;
+
             }
 
         }

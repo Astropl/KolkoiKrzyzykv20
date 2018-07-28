@@ -1,4 +1,4 @@
-package SDA;
+package SDA.endGame;
 
 import SDA.init.MainBoard;
 
@@ -28,7 +28,7 @@ public class TheWin extends MainBoard
         btn9.setEnabled(false);
         lbl3.setText(message1 + lbl4.getText());
         System.out.println("Wyłaczam drugi wątek");
-        koniec = true;
+        //koniec = true;
         //thread.stop();
 
 

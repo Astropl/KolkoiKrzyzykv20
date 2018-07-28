@@ -1,20 +1,20 @@
-package SDA;
+package SDA.settings;
 
 import SDA.init.MainBoard;
 
 import javax.swing.*;
 
 public class ResetSettings extends MainBoard {
-    public  static void resetSettings() {
+    public static void resetSettings() {
 //        NewThread newThread = new NewThread();
 //        Thread thread = new Thread(newThread);
 //        thread.stop();
         System.out.println("Resetuje butony");
-        setLocal="pol";
+        setLocal = "pol";
         setLocalMetoda(setLocal);
         ePolsh.setSelected(true);
         btnReset.setEnabled(false);
-        KonstruktorTekstów.konstruktorTekstow();
+        ConstructorsTextOnButtons.constructorsTextOnButtons();
         ButtonsDisabledOnFirst.buttonsDisabledOnFirst(false);
         btnGraj.setEnabled(true);
         lbl1.setVisible(false);
@@ -53,8 +53,8 @@ public class ResetSettings extends MainBoard {
         chBox.setSelected(false);
         chBox.setVisible(true);
         lbl5.setVisible(true);
-        countRuch=0;
-        koniec =false;
+        countRuch = 0;
+        koniec = false;
 
     }
 

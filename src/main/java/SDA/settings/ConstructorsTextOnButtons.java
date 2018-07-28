@@ -1,13 +1,14 @@
-package SDA;
+package SDA.settings;
 
 import SDA.init.MainBoard;
 
 import java.awt.*;
 
 
-public class KonstruktorTekstów {
+public class ConstructorsTextOnButtons {
 
-    public static void konstruktorTekstow() {
+
+    public static void constructorsTextOnButtons() {
 
         MainBoard.btn1.setText("");
         MainBoard.btn2.setText("");
@@ -35,7 +36,7 @@ public class KonstruktorTekstów {
         MainBoard.chBox.setText("Osoba - Osoba");
         MainBoard.lbl5.setText(convertToMultiline("Zaznacz żeby grac z komputerem. \nOdznaczone to gra dwóch osób."));
         MainBoard.lblCzas.setText("1900:01:01 12:04");
-        MainBoard.lblCzas.setFont(new Font("Arial",Font.BOLD,20));
+        MainBoard.lblCzas.setFont(new Font("Arial", Font.BOLD, 20));
     }
 
     public static String convertToMultiline(String orig) {

@@ -1,8 +1,8 @@
-package SDA;
+package SDA.endGame;
 
 import SDA.init.MainBoard;
 
-import static SDA.TheWin.theWin;
+import static SDA.endGame.TheWin.theWin;
 
 public class Checkresult extends MainBoard {
 

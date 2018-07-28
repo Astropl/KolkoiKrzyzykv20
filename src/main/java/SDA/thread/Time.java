@@ -9,14 +9,10 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Time  implements Runnable {
-
+public class Time implements Runnable {
 
 
 //
-
-
-
 
 
     public void run() {
@@ -30,15 +26,13 @@ public class Time  implements Runnable {
                 Date date = new Date();
 
                 //LblDate.setText(dateFormat.format(date));
-                MainBoard.lblCzas.setText(timeFormat.format(date)+" "+ dateFormat.format(date));
+                MainBoard.lblCzas.setText(timeFormat.format(date) + " " + dateFormat.format(date));
             }
         };
         Timer timer = new Timer(1000, timerListener);
 
         timer.setInitialDelay(0);
         timer.start();
-
-
 
 
         System.out.println("Watek z czasem");
@@ -48,10 +42,6 @@ public class Time  implements Runnable {
         System.out.println("Local DateTime = " + "czas");
         System.out.println("String moja data = " + "mojaData");
         System.out.println("nadpisana metoda runnable");
-
-
-
-
 
 
         breakFor5Seconds();

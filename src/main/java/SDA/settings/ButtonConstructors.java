@@ -1,13 +1,12 @@
-package SDA;
+package SDA.settings;
 
 import SDA.init.MainBoard;
 
 import javax.swing.*;
 
-public class KonstruktorButtonow
-{
-    public static void kontruktorButonow()
-    {
+public class ButtonConstructors {
+
+    public static void butonConstructors() {
         MainBoard.btn1 = new JButton();
         MainBoard.btn2 = new JButton();
         MainBoard.btn3 = new JButton();

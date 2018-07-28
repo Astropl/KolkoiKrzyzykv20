@@ -1,10 +1,12 @@
-package SDA;
+package SDA.settings;
 
 import SDA.init.MainBoard;
 
-public class KonstruktorRozmiarButtonow {
+public class ButtonsConstructorsSize {
 
-    public static void rozmiaryLabelow() {
+
+    public static void buttonsConstructorsSize() {
+
 
         MainBoard.btn1.setBounds(20, 80, 100, 100); //obnizam o 60
         MainBoard.btn2.setBounds(120, 80, 100, 100);
@@ -34,7 +36,7 @@ public class KonstruktorRozmiarButtonow {
         MainBoard.lbl5.setBounds(350, 200, 120, 180);
 
 
-        MainBoard.lblCzas.setBounds(120,20,220,30);
+        MainBoard.lblCzas.setBounds(120, 20, 220, 30);
 
     }
 }

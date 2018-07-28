@@ -1,7 +1,11 @@
-package SDA.Language;
+package SDA.language;
 
-import SDA.*;
+import SDA.move.CountRuch;
+import SDA.move.MovePerson;
+import SDA.init.StartGame;
+import SDA.endGame.TheWin;
 import SDA.init.MainBoard;
+import SDA.settings.SetNames;
 
 public class SetEnglish {
     public static void setEnglish() {
@@ -20,13 +24,13 @@ public class SetEnglish {
         MainBoard.eEnglish.setText("English");
         MainBoard.eGerman.setText("German");
         MainBoard.eChoiceTypeGame.setText("Mode selection");
-        UstawImiona.message1 = "Player 1 give your name";
-        UstawImiona.message2 = "The computer will be called BAJTEK: ";
-        UstawImiona.message3 = "Player 2 give your name";
-        TheWin.message1="WIN A PLAYER ABOUT NAME: ";
-        TheWin.message2="Hurray won: ";
-        CountRuch.message1="Unfortunately, but we have a DRAW !!! ";
-        RuchOsoba.message1="Player's movement by name : ";
+        SetNames.message1 = "Player 1 give your name";
+        SetNames.message2 = "The computer will be called BAJTEK: ";
+        SetNames.message3 = "Player 2 give your name";
+        TheWin.message1 = "WIN A PLAYER ABOUT NAME: ";
+        TheWin.message2 = "Hurray won: ";
+        CountRuch.message1 = "Unfortunately, but we have a DRAW !!! ";
+        MovePerson.message1 = "Player's movement by name : ";
         StartGame.message = "Now we'll begin\n";
         //MainBoard.lbl1.setText("imie 1");
         MainBoard.lbl11.setText("Player no 1");

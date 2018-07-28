@@ -1,7 +1,11 @@
-package SDA.Language;
+package SDA.language;
 
-import SDA.*;
+import SDA.move.CountRuch;
+import SDA.move.MovePerson;
+import SDA.init.StartGame;
+import SDA.endGame.TheWin;
 import SDA.init.MainBoard;
+import SDA.settings.SetNames;
 
 public class SetGerman {
     public static void setGerman() {
@@ -22,13 +26,13 @@ public class SetGerman {
         MainBoard.eEnglish.setText("English");
         MainBoard.eGerman.setText("Deutsch");
         MainBoard.eChoiceTypeGame.setText("Modusauswahl");
-        UstawImiona.message1 = "Spieler 1 geben Sie Ihren Namen";
-        UstawImiona.message2 = "Der Computer wird BAJTEK heißen: ";
-        UstawImiona.message3 = "Spieler 2 geben Sie Ihren Namen";
-        TheWin.message1="GEWINNEN SIE EINEN SPIELER ÜBER NAME: ";
-        TheWin.message2="Hurrah gewann: ";
-        CountRuch.message1="Leider, aber wir haben ein UNENTSCIEDEN !!! ";
-        RuchOsoba.message1="Spielerbewegung mit Namen : ";
+        SetNames.message1 = "Spieler 1 geben Sie Ihren Namen";
+        SetNames.message2 = "Der Computer wird BAJTEK heißen: ";
+        SetNames.message3 = "Spieler 2 geben Sie Ihren Namen";
+        TheWin.message1 = "GEWINNEN SIE EINEN SPIELER ÜBER NAME: ";
+        TheWin.message2 = "Hurrah gewann: ";
+        CountRuch.message1 = "Leider, aber wir haben ein UNENTSCIEDEN !!! ";
+        MovePerson.message1 = "Spielerbewegung mit Namen : ";
         StartGame.message = "Nun, wir fangen an";
 //MainBoard.lbl1.setText("imie 1");
         MainBoard.lbl11.setText("Spieler no 1");

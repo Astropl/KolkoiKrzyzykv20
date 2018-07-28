@@ -1,25 +1,25 @@
-package SDA;
+package SDA.settings;
 
+import SDA.init.StartGame;
 import SDA.init.MainBoard;
 
 import javax.swing.*;
 
 import static SDA.init.MainBoard.setLocal;
-import static SDA.Language.SetEnglish.setEnglish;
-import static SDA.Language.SetGerman.setGerman;
-import static SDA.SetPolish.setPolish;
-
-public class UstawImiona {
+import static SDA.language.SetEnglish.setEnglish;
+import static SDA.language.SetGerman.setGerman;
+import static SDA.language.SetPolish.setPolish;
 
 
-    static String imie1, imie2;
+public class SetNames {
+
+
     public static String message1 = "Player 1 podaj swoje  imie";
     public static String message2 = "Komputer będzie mia na imię BAJTEK: ";
     public static String message3 = "Player 2 podaj swoje  imie";
+    static String imie1, imie2;
 
-
-
-    public static void ustawImiona() {
+    public static void setNames() {
         System.out.println("Ustaw imiona");
 
         if (setLocal.equals("pol"))
@@ -35,7 +35,7 @@ public class UstawImiona {
             JOptionPane.showMessageDialog(null, message2);
 
             imie2 = "BAJTEK";
-            System.out.println("Ustawiam imie komputera na :"+imie2);
+            System.out.println("Ustawiam imie komputera na :" + imie2);
 
         } else {
             imie2 = JOptionPane.showInputDialog(message3);

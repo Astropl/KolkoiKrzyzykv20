@@ -1,46 +1,48 @@
-package SDA;
+package SDA.move;
 
 import SDA.init.MainBoard;
 
 import javax.swing.*;
 import java.util.Random;
 
-import static SDA.Checkresult.checkResult;
+import static SDA.endGame.Checkresult.checkResult;
 
-public class RuchKompa extends MainBoard {
+public class MoveComp extends MainBoard {
 
 
-    public static int losuj;
 
-    public static void ruchKompa() {
+    public static int randomInt;
+
+    public static void moveComp() {
         if (!koniec) {
-            countRuch ++;
-        lbl4.setText(lbl2.getText());
-        lbl3.setText("Ruch Kompa o imieniu :"+lbl4.getText());
-        System.out.println("**************");
-        System.out.println("Ruch Kompa");
+            countRuch++;
+            lbl4.setText(lbl2.getText());
+            lbl3.setText("Ruch Kompa o imieniu :" + lbl4.getText());
+            System.out.println("**************");
+            System.out.println("Ruch Kompa");
 
-        if (koniec)
-        {
-            System.out.println("Koniec na True");
+            if (koniec) {
+                System.out.println("Koniec na True");
 
-        }else {
-            System.out.println("Ruch Kompa teraz");
-            losujRuchKompa();
-            checkResult();
-            lbl4.setText(lbl1.getText());
-    }}}
+            } else {
+                System.out.println("Ruch Kompa teraz");
+                randomMoveComp();
+                checkResult();
+                lbl4.setText(lbl1.getText());
+            }
+        }
+    }
 
-    public static void losujRuchKompa() {
+    public static void randomMoveComp() {
         breakFor5Seconds();
         Random rn = new Random();
-        losuj = 0;
-        losuj = rn.nextInt(9) + 1;
-        System.out.println("Wylosoał komp numer " + losuj);
+        randomInt = 0;
+        randomInt = rn.nextInt(9) + 1;
+        System.out.println("Wylosoał komp numer " + randomInt);
         sprawdzCzyJuzByZaznaczony();
     }
-    public static void breakFor5Seconds()
-    {
+
+    public static void breakFor5Seconds() {
         System.out.println("Przerwa kilka sekund");
 //        for (int i = 2; i >= 0;  i-- )
 //        {
@@ -57,7 +59,7 @@ public class RuchKompa extends MainBoard {
 
     public static void btnFalse() {
         System.out.println("ikona pelna. Losuj jeszcze raz");
-        losujRuchKompa();
+        randomMoveComp();
     }
 
     public static void btnTrue() {
@@ -67,7 +69,7 @@ public class RuchKompa extends MainBoard {
     }
 
     public static void sprawdzCzyJuzByZaznaczony() {
-        switch (losuj) {
+        switch (randomInt) {
             case 1:
 
                 if (btn1.isEnabled() == false) {

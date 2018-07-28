@@ -1,10 +1,9 @@
-package SDA.Language;
+package SDA.language;
 
 import SDA.init.MainBoard;
 
-public class SetLabels  {
-    public static boolean setLabels ( Boolean bol)
-    {
+public class SetLabels {
+    public static boolean setLabels(Boolean bol) {
         MainBoard.lbl1.setVisible(bol);
         MainBoard.lbl2.setVisible(bol);
         MainBoard.lbl3.setVisible(bol);

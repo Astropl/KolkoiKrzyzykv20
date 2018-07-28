@@ -1,7 +1,10 @@
 package SDA.thread;
 
-import static SDA.CountRuch.countRuch;
-import static SDA.RuchOsoba.ruchOsoba;
+import SDA.move.MovePerson;
+
+import static SDA.move.CountRuch.countRuch;
+import static SDA.move.MovePerson.movePerson;
+
 
 public class NewThread implements Runnable {
 
@@ -10,17 +13,15 @@ public class NewThread implements Runnable {
         try {
             System.out.println("nowy watek");
             countRuch();
-            ruchOsoba();
+            movePerson();
             //interrupt();
 
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             System.out.println("poszło dalej");
         }
     }
-
 
 
 //    private static void interrupt() {

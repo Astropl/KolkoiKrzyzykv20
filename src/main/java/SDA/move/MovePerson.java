@@ -1,15 +1,20 @@
-package SDA;
+package SDA.move;
 
 import SDA.init.MainBoard;
 
-import static SDA.Checkresult.checkResult;
-import static SDA.RuchKompa.ruchKompa;
+import static SDA.endGame.Checkresult.checkResult;
+import static SDA.move.MoveComp.moveComp;
 
-public class RuchOsoba extends MainBoard
 
- { public static String message1 = "Ruch Gracza o imieniu : ";
+public class MovePerson extends MainBoard
 
-    public static void ruchOsoba() {
+
+{
+
+    public static String message1 = "Ruch Gracza o imieniu : ";
+
+
+    public static void movePerson() {
         if (!koniec) {
             System.out.println("Ruch Osoba");
             if (ruchOsoba == 0) {
@@ -18,7 +23,7 @@ public class RuchOsoba extends MainBoard
                     System.out.println("Selected jest zaznaczony w RuchOsoba");
                     ruchOsoba = 2;
                     checkResult();
-                    ruchKompa();
+                    moveComp();
                     ruchOsoba = 0;
                 } else if (chBox.isSelected() == false) {
                     System.out.println("Selected jest NIE zaznaczony w RuchOsoba");

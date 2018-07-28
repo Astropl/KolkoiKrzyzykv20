@@ -1,9 +1,10 @@
 package SDA.init;
 
-import SDA.*;
-import SDA.Language.SetEnglish;
-import SDA.Language.SetGerman;
-import SDA.Language.SetLabels;
+import SDA.language.SetEnglish;
+import SDA.language.SetGerman;
+import SDA.language.SetLabels;
+import SDA.language.SetPolish;
+import SDA.settings.*;
 import SDA.thread.NewThread;
 import SDA.thread.Time;
 
@@ -13,9 +14,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
-import static SDA.Language.SetEnglish.setEnglish;
-import static SDA.Language.SetGerman.setGerman;
-import static SDA.SetPolish.setPolish;
+import static SDA.language.SetEnglish.setEnglish;
+import static SDA.language.SetGerman.setGerman;
+import static SDA.language.SetPolish.setPolish;
 
 
 public class MainBoard extends JFrame implements ActionListener {
@@ -66,9 +67,9 @@ public class MainBoard extends JFrame implements ActionListener {
     public static JRadioButtonMenuItem mOsobaOsoba = new JRadioButtonMenuItem("Osoba - Osoba", true);
     boolean bol = false;
     ButtonsDisabledOnFirst btdof = new ButtonsDisabledOnFirst();
-    KonstruktorButtonow kb = new KonstruktorButtonow();
-    KonstruktorRozmiarButtonow krb = new KonstruktorRozmiarButtonow();
-    KonstruktorTekstów kt = new KonstruktorTekstów();
+    ButtonConstructors kb = new ButtonConstructors();
+    ButtonsConstructorsSize krb = new ButtonsConstructorsSize();
+    ConstructorsTextOnButtons kt = new ConstructorsTextOnButtons ();
     SetLabels sL = new SetLabels();
     JMenuBar menubar = new JMenuBar();
     ImageIcon exitIcon = new ImageIcon("Resources/exit.png");
@@ -109,10 +110,10 @@ public class MainBoard extends JFrame implements ActionListener {
         initUI();
 
 
-        kb.kontruktorButonow();
+        kb.butonConstructors();
         konstruktorAddKontenerow();
-        krb.rozmiaryLabelow();
-        kt.konstruktorTekstow();
+        krb.buttonsConstructorsSize();
+        kt.constructorsTextOnButtons();
         addActiony();
         this.setVisible(true);
         btdof.buttonsDisabledOnFirst(false);
@@ -463,7 +464,7 @@ public class MainBoard extends JFrame implements ActionListener {
 
         } else if (source == btnGraj) {
 
-            UstawImiona.ustawImiona();
+            SetNames.setNames();
             btnGraj.setEnabled(false);
             System.out.println("Nacoisnl btnGraj");
             System.out.println("***************");

@@ -1,6 +1,11 @@
-package SDA;
+package SDA.language;
 
+import SDA.move.CountRuch;
+import SDA.init.StartGame;
+import SDA.endGame.TheWin;
 import SDA.init.MainBoard;
+import SDA.move.MovePerson;
+import SDA.settings.SetNames;
 
 public class SetPolish {
 
@@ -23,13 +28,13 @@ public class SetPolish {
         MainBoard.eChoiceTypeGame.setText("Wybór trybu");
 
 
-        UstawImiona.message1 = "Player 1 podaj swoje  imie";
-        UstawImiona.message2 = "Komputer będzie miał na imię BAJTEK: ";
-        UstawImiona.message3 = "Player 2 podaj swoje  imie";
-        TheWin.message1="WYGRANA  GRACZA O IMIENIU: ";
-        CountRuch.message1="Niestety ale mamy REMIS !!! ";
-        RuchOsoba.message1="Ruch Gracza o imieniu : ";
-        TheWin.message2="Hura wygrał: ";
+        SetNames.message1 = "Player 1 podaj swoje  imie";
+        SetNames.message2 = "Komputer będzie miał na imię BAJTEK: ";
+        SetNames.message3 = "Player 2 podaj swoje  imie";
+        TheWin.message1 = "WYGRANA  GRACZA O IMIENIU: ";
+        CountRuch.message1 = "Niestety ale mamy REMIS !!! ";
+        MovePerson.message1 = "Ruch Gracza o imieniu : ";
+        TheWin.message2 = "Hura wygrał: ";
 
 
         StartGame.message = "No to zaczynamy";
